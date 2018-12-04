@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import kfc_logo from './kfc_logo.png'
 import './App.css';
 import {
   Container,
@@ -22,7 +23,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
-
 
 class App extends Component {
   constructor(props) {
@@ -59,7 +59,7 @@ class App extends Component {
 
         <div>
          <Card>
-          <CardImg top width="100%" src="https://www.google.com/search?q=kfc+free+logo&rlz=1C1CHBF_enCA689CA689&source=lnms&tbm=isch&sa=X&ved=0ahUKEwif-NeC5IXfAhWUUn0KHfh9Cu8Q_AUIDigB&biw=1517&bih=772#imgrc=Y4Lvxs83C5VJ5M:" alt="Card image cap" />
+          <CardImg top width="100%" src={kfc_logo} alt="Card image cap" />
         </Card>  
        </div>      
         <header className="App-header">
