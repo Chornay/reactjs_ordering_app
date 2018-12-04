@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import kfc_logo from './kfc_logo.png'
+import kfc_logo from './images/kfc_logo.png'
 import './App.css';
 import {
   Container,
@@ -10,6 +10,7 @@ import {
   CardBody,
   CardText,
   CardImg,
+  CardSubtitle,
   Row,
   Col,
   Collapse,
@@ -42,28 +43,81 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div class = "Container">          
-          <Row>
-            <Col xs="3">For one </Col>
-            <Col xs="2">Share</Col>
-            <Col xs="2">Deal</Col>
-            <Col xs="auto">RM</Col>
-          </Row> 
-          <div Class="Row">
-          <Col style={{backgroundColor:"red"}}>START MY ORDER</Col>
+      <div>
+        <Navbar color="white" light>
+          <div class="container">
+          <NavbarBrand href="/">KFC</NavbarBrand>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">Sign In</NavLink>
+            </NavItem>
+          </Nav>
           </div>
-          <image ></image>
+        </Navbar>     
+        <div className="App">
+          <Container>          
+            <Row style={{backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
+              <Button color="white">For one</Button>  
+              <Button color="white">Share</Button>  
+              <Button color="white">Deal</Button>
+              <Col class="float-right"><p style={{textAlign:'right'}}>RM 10.00</p></Col>
+            </Row> 
+            <Row style={{padding:20}}>
+              <Col style={{backgroundColor:'white'}}>
+                <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
+              </Col>
+            </Row>
+            <image ></image>
+            <Row>
 
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+
+            </Row>
+
+            <header className="App-header">
+            </header>
+
+          </Container>         
         </div>
-
-        <div>
-         <Card>
-          <CardImg top width="100%" src={kfc_logo} alt="Card image cap" />
-        </Card>  
-       </div>      
-        <header className="App-header">
-        </header>
       </div>
     );
   }
