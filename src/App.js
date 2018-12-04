@@ -10,6 +10,7 @@ import {
   CardBody,
   CardText,
   CardImg,
+  CardDeck,
   Row,
   Col,
   Collapse,
@@ -44,26 +45,63 @@ class App extends Component {
     return (
       <div className="App">
         <div class = "Container">          
-          <Row>
-            <Col xs="3">For one </Col>
-            <Col xs="2">Share</Col>
-            <Col xs="2">Deal</Col>
-            <Col xs="auto">RM</Col>
-          </Row> 
-          <div Class="Row">
-          <Col style={{backgroundColor:"red"}}>START MY ORDER</Col>
-          </div>
-          <image ></image>
 
+        <div>
+          <Button color="primary">FOR ONE </Button>{' '}
+          <Button color="secondary">SHARE</Button>{' '}
+          <Button color="success">DEALS</Button>{' '}
+          <Button color="info">RM0.00</Button>{' '}
         </div>
+
+        </div><Button style={{backgroundColor:"red"}} class="start-order" size="lg" block>Block level button</Button>          
 
         <div>
          <Card>
-          <CardImg top width="100%" src={kfc_logo} alt="Card image cap" />
-        </Card>  
-       </div>      
+          <CardImg style={{width: '100%', height: '200px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
+         </Card>  
+        </div>
         <header className="App-header">
+          <h3 class="menu-style">MEAL FOR ONE</h3>      
         </header>
+
+        <div>
+          <CardDeck>
+          <Row>
+            <Card>
+              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Card title</CardTitle>
+                <Button>Button</Button>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Card title</CardTitle>
+                <Button>Button</Button>
+              </CardBody>
+          </Card>
+          </Row>
+
+          <Row>
+            <Card>
+              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Card title</CardTitle>
+                <Button>Button</Button>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Card title</CardTitle>
+                <Button>Button</Button>
+              </CardBody>
+          </Card>
+          </Row>
+        </CardDeck>  
+      </div>
+       
       </div>
     );
   }
