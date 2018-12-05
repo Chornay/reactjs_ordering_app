@@ -46,7 +46,7 @@ class App extends Component {
       <div>
         <Navbar color="white" light>
           <div class="container">
-          <NavbarBrand href="/">KFC</NavbarBrand>
+          <NavbarBrand href="/">𝝣</NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink href="/components/">Sign In</NavLink>
@@ -57,9 +57,9 @@ class App extends Component {
         <div className="App">
           <Container>          
             <Row style={{backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
-              <Button color="white">For one</Button>  
-              <Button color="white">Share</Button>  
-              <Button color="white">Deal</Button>
+              <a style={{padding:10}} href="#">For one</a>  
+              <a style={{padding:10}} href="#">Share</a>  
+              <a style={{padding:10}} href="#">Deal</a>
               <Col class="float-right"><p style={{textAlign:'right'}}>RM 10.00</p></Col>
             </Row> 
             <Row style={{padding:20}}>
