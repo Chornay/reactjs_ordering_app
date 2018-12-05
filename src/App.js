@@ -10,7 +10,11 @@ import {
   CardBody,
   CardText,
   CardImg,
+
   CardSubtitle,
+
+  CardDeck,
+
   Row,
   Col,
   Collapse,
@@ -118,6 +122,7 @@ class App extends Component {
 
           </Container>         
         </div>
+
       </div>
     );
   }
