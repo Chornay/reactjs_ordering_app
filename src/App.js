@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import kfc_logo from './kfc_logo.png'
+import kfc_logo from './images/kfc_logo.png'
 import './App.css';
 import {
   Container,
@@ -10,7 +10,11 @@ import {
   CardBody,
   CardText,
   CardImg,
+
+  CardSubtitle,
+
   CardDeck,
+
   Row,
   Col,
   Collapse,
@@ -43,65 +47,82 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div class = "Container">          
+      <div>
+        <Navbar color="white" light>
+          <div class="container">
+          <NavbarBrand href="/">𝝣</NavbarBrand>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">Sign In</NavLink>
+            </NavItem>
+          </Nav>
+          </div>
+        </Navbar>     
+        <div className="App">
+          <Container>          
+            <Row style={{backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
+              <a style={{padding:10}} href="#">For one</a>  
+              <a style={{padding:10}} href="#">Share</a>  
+              <a style={{padding:10}} href="#">Deal</a>
+              <Col class="float-right"><p style={{textAlign:'right'}}>RM 10.00</p></Col>
+            </Row> 
+            <Row style={{padding:20}}>
+              <Col style={{backgroundColor:'white'}}>
+                <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
+              </Col>
+            </Row>
+            <image ></image>
+            <Row>
 
-        <div>
-          <Button color="primary">FOR ONE </Button>{' '}
-          <Button color="secondary">SHARE</Button>{' '}
-          <Button color="success">DEALS</Button>{' '}
-          <Button color="info">RM0.00</Button>{' '}
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+              <Col xs="6">
+                <Card>
+                  <CardImg top style={{height:150}} src={kfc_logo} alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                  </CardBody>
+                </Card>  
+              </Col>
+
+            </Row>
+
+            <header className="App-header">
+            </header>
+
+          </Container>         
         </div>
 
-        </div><Button style={{backgroundColor:"red"}} class="start-order" size="lg" block>Block level button</Button>          
-
-        <div>
-         <Card>
-          <CardImg style={{width: '100%', height: '200px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
-         </Card>  
-        </div>
-        <header className="App-header">
-          <h3 class="menu-style">MEAL FOR ONE</h3>      
-        </header>
-
-        <div>
-          <CardDeck>
-          <Row>
-            <Card>
-              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <Button>Button</Button>
-              </CardBody>
-          </Card>
-          </Row>
-
-          <Row>
-            <Card>
-              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardImg style={{width: '80px', height: '80px'}} top width="100%" src={kfc_logo} alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <Button>Button</Button>
-              </CardBody>
-          </Card>
-          </Row>
-        </CardDeck>  
-      </div>
-       
       </div>
     );
   }
