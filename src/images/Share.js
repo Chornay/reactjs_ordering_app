@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import kfc_promotion from './images/kfc_promotion.jpg'
-import chicken_meal from './images/chicken_meal.jpeg'
-import buger_meals from './images/buger_meals.jpg'
 import side_snack from './images/side_snack.jpg'
+import family_meals from './images/family_meal.jpeg'
 import desert from './images/desert.jpg'
 import drink from './images/drink.jpeg'
 import './App.css';
@@ -72,7 +71,6 @@ class App extends Component {
               <Col class="float-right"><p style={{textAlign:'right'}}>RM 10.00</p></Col>
             </Row> 
 
-
             <Row style={{padding:20}}>
               <Col style={{backgroundColor:'white'}}>
                 <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
@@ -90,21 +88,12 @@ class App extends Component {
             <h3 style={{textAlign: 'left', padding:20}}>MEALS FOR ONE</h3>
 
             <image ></image>
-
-            <Row>
+s            <Row>
               <Col xs="6">
                 <Card>
-                  <CardImg top style={{height:150}} src={chicken_meal} alt="Card image cap" />
+                  <CardImg top style={{height:150}} src={family_meals} alt="Card image cap" />
                   <CardBody>
-                    <CardTitle>Chicken meals</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={buger_meals} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Bugers</CardTitle>
+                    <CardTitle>Family meals</CardTitle>
                   </CardBody>
                 </Card>  
               </Col>
@@ -147,4 +136,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default Share;
