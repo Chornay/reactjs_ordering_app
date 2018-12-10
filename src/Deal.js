@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from './logo.svg';
 import kfc_promotion from './images/kfc_promotion.jpg'
 import side_snack from './images/side_snack.jpg'
@@ -14,9 +15,7 @@ import {
   CardBody,
   CardText,
   CardImg,
-
   CardSubtitle,
-
   CardDeck,
 
   Row,
