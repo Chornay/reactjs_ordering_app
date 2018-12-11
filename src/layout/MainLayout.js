@@ -3,34 +3,20 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import {
-    Container,
-    Card,
-    Button,
-    CardTitle,
-    CardBody,
-    CardText,
-    CardImg,
-    CardSubtitle,
-    CardDeck,
-    Row,
-    Col,
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
+    Container, Card, Button,
+    CardTitle, CardBody, CardText,
+    CardImg, CardSubtitle, CardDeck,
+    Row, Col, Collapse, Navbar,
+    NavbarToggler, NavbarBrand,
+    Nav, NavItem, NavLink,
     UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    DropdownToggle, DropdownMenu, DropdownItem
 } from 'reactstrap';
 
-import ForOneMenuScreen from './ForOneMenuScreen'
-import ShareMenuScreen from './ShareMenuScreen'
+import ForOneMenuScreen from '../screens/ForOneMenuScreen'
+import ShareMenuScreen from '../screens/ShareMenuScreen'
 
-class MainScreen extends Component {
+class MainLayout extends Component {
 
     constructor(props) {
         super(props);
@@ -79,4 +65,4 @@ class MainScreen extends Component {
 }
 
 
-export default MainScreen;
+export default MainLayout;
