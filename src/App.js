@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import './App.css';
-import MainLayout from './layout/MainLayout'
+import MainLayout from './layouts/MainLayout'
 
 class App extends Component {
   
   render() {
     return (
-      <Router>        
+      <BrowserRouter>        
         <Route path="/" component={MainLayout} />       
-      </Router>
+      </BrowserRouter>
     );
   }
 }

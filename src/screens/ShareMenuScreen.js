@@ -9,27 +9,14 @@ import drink from '../images/drink.jpeg'
 
 import {
   Container,
-  Card,
-  Button,
-  CardTitle,
-  CardBody,
-  CardText,
-  CardImg,
-  CardSubtitle,
-  CardDeck,
-  Row,
-  Col,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Card, Button, CardTitle, CardBody,
+  CardText, CardImg, CardSubtitle, CardDeck,
+  Row, Col, Collapse, Navbar,
+  NavbarToggler, NavbarBrand, Nav, NavItem,
+  NavLink, UncontrolledDropdown, DropdownToggle,
+  DropdownMenu, DropdownItem,
+  Modal, ModalHeader, ModalBody, ModalFooter
+} from "reactstrap";
 
 class ShaerMenuScreen extends Component {
   constructor(props) {
