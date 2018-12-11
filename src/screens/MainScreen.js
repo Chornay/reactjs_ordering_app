@@ -27,7 +27,7 @@ import {
     DropdownItem
 } from 'reactstrap';
 
-import MenuScreen from './MenuScreen'
+import ForOneMenuScreen from './ForOneMenuScreen'
 import ShareMenuScreen from './ShareMenuScreen'
 
 class MainScreen extends Component {
@@ -70,7 +70,7 @@ class MainScreen extends Component {
                         </Row>
                     </Container>
                 </div>
-                <Route path="/" exact component={MenuScreen} />
+                <Route path="/" exact component={ForOneMenuScreen} />
                 <Route path="/share/" component={ShareMenuScreen} />
                 <Route path="/about/" component={ShareMenuScreen} />
             </div>

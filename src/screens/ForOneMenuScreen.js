@@ -32,7 +32,7 @@ import side_snack from '../images/side_snack.jpg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
 
-class MenuScreen extends Component {
+class ForOneMenuScreen extends Component {
    render() {
        return (
          <div>
@@ -103,4 +103,5 @@ class MenuScreen extends Component {
 }
 
 
-export default MenuScreen;
+export default ForOneMenuScreen;
+

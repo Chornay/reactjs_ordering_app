@@ -5,7 +5,7 @@ import Share from './Share';
 import './App.css';
 
 
-import MenuScreen from './screens/MenuScreen'
+import ForOneMenuScreen from './screens/ForOneMenuScreen'
 import ShareMenuScreen from './screens/ShareMenuScreen'
 import MainScreen from './screens/MainScreen'
 
