@@ -18,6 +18,7 @@ import ShareMenuScreen from "../screens/ShareMenuScreen"
 import DealsMenuScreen from "../screens/DealsMenuScreen"
 
 import MenuListScreen from '../screens/MenuListScreen'
+import MenuItemScreen from '../screens/MenuItemScreen'
 
 class MainLayout extends Component {
   constructor(props) {
@@ -81,9 +82,8 @@ class MainLayout extends Component {
         <Route path="/" exact component={ForOneMenuScreen} />
         
         <Route path="/for-one" exact component={ForOneMenuScreen} />
-
         <Route path="/for-one/chicken" component={MenuListScreen} />
-
+        <Route path="/item/2-pc-combo" component={MenuItemScreen} />
 
         <Route path="/share/" exact component={ShareMenuScreen} />
         <Route path="/deals/" exact component={DealsMenuScreen} />

@@ -18,7 +18,7 @@ import side_snack from '../images/side_snack.jpg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
 
-class MenuListScreen extends Component {
+class MenuItemScreen extends Component {
    render() {
        return (
          <div>
@@ -29,17 +29,18 @@ class MenuListScreen extends Component {
       </Row>
 
 
-      <h3 style={{textAlign: 'left', padding:20}}>Chicken Meals</h3>
+      <h3 style={{textAlign: 'left', padding:20}}>Menu Item</h3>
 
       <image ></image>
 
       <Row>
         <Col xs="12">
           <Card >
-            
-            <CardBody>
+
             <img top style={{width:150}} src={chicken_meal} />
-              <a href="/item/2-pc-combo">2-PC COMBO</a>
+            
+            <CardBody>           
+              <h1>2-PC COMBO</h1>
             </CardBody>
           </Card>  
         </Col>
@@ -54,5 +55,5 @@ class MenuListScreen extends Component {
 }
 
 
-export default MenuListScreen;
+export default MenuItemScreen;
 
