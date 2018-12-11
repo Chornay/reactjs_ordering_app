@@ -2,28 +2,14 @@ import React, { Component } from 'react'
 
 import {
   Container,
-  Card,
-  Button,
-  CardTitle,
-  CardBody,
-  CardText,
-  CardImg,
-  CardSubtitle,
-  CardDeck,
-  Row,
-  Col,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from 'reactstrap';
+  Card, Button, CardTitle, CardBody,
+  CardText, CardImg, CardSubtitle, CardDeck,
+  Row, Col, Collapse, Navbar,
+  NavbarToggler, NavbarBrand, Nav, NavItem,
+  NavLink, UncontrolledDropdown, DropdownToggle,
+  DropdownMenu, DropdownItem,
+  Modal, ModalHeader, ModalBody, ModalFooter
+} from "reactstrap";
 
 import kfc_promotion from '../images/kfc_promotion.jpg'
 import chicken_meal from '../images/chicken_meal.jpeg'
@@ -56,10 +42,10 @@ class ForOneMenuScreen extends Component {
 
       <Row>
         <Col xs="6">
-          <Card>
+          <Card onClick={()=>{console.log('here')}}>
             <CardImg top style={{height:150}} src={chicken_meal} alt="Card image cap" />
             <CardBody>
-              <CardTitle>Chicken meals</CardTitle>
+              <CardTitle><a href="/for-one/chicken">Chicken Meals</a></CardTitle>
             </CardBody>
           </Card>  
         </Col>
@@ -67,7 +53,7 @@ class ForOneMenuScreen extends Component {
           <Card>
             <CardImg top style={{height:150}} src={buger_meals} alt="Card image cap" />
             <CardBody>
-              <CardTitle>Bugers</CardTitle>
+              <CardTitle>Burgers</CardTitle>
             </CardBody>
           </Card>  
         </Col>

@@ -11,10 +11,13 @@ import {
   NavLink, UncontrolledDropdown, DropdownToggle,
   DropdownMenu, DropdownItem,
   Modal, ModalHeader, ModalBody, ModalFooter
-} from "reactstrap";
+} from "reactstrap"
 
-import ForOneMenuScreen from "../screens/ForOneMenuScreen";
-import ShareMenuScreen from "../screens/ShareMenuScreen";
+import ForOneMenuScreen from "../screens/ForOneMenuScreen"
+import ShareMenuScreen from "../screens/ShareMenuScreen"
+import DealsMenuScreen from "../screens/DealsMenuScreen"
+
+import MenuListScreen from '../screens/MenuListScreen'
 
 class MainLayout extends Component {
   constructor(props) {
@@ -57,7 +60,7 @@ class MainLayout extends Component {
                 justifyContent: "center"
               }}
             >
-              <a style={{ padding: 10 }} href="/">
+              <a style={{ padding: 10 }} href="/for-one">
                 For One
               </a>
               <a style={{ padding: 10 }} href="/share/">
@@ -72,9 +75,18 @@ class MainLayout extends Component {
             </Row>
           </Container>
         </div>
+
+        {/* The Screens  */}
+
         <Route path="/" exact component={ForOneMenuScreen} />
-        <Route path="/share/" component={ShareMenuScreen} />
-        <Route path="/about/" component={ShareMenuScreen} />
+        
+        <Route path="/for-one" exact component={ForOneMenuScreen} />
+
+        <Route path="/for-one/chicken" component={MenuListScreen} />
+
+
+        <Route path="/share/" exact component={ShareMenuScreen} />
+        <Route path="/deals/" exact component={DealsMenuScreen} />
 
         <Modal
           isOpen={this.state.isOpen}
