@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import kfc_promotion from '../images/kfc_promotion.jpg'
+import deal_promotions from '../images/deal_promotions.png'
+import deal_spicy_gochujang_a from '../images/deal_spicy_gochujang_a.png'
 import side_snack from '../images/side_snack.jpg'
 import family_meals from '../images/family_meals.jpeg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
+import '../StyleTest.css'
 
 import {
   Container,
@@ -27,6 +29,7 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Media,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -65,50 +68,33 @@ class DealsMenuScreen extends Component {
             <Row style={{padding:20}}>
               <Col xs="12">
                 <Card>
-                  <CardImg top style={{height:150}} src={kfc_promotion} alt="Card image cap" />
+                  <CardImg top style={{height:150}} src={deal_promotions} alt="Card image cap" />
                 </Card>  
               </Col>
             </Row>
+ 
 
             <h3 style={{textAlign: 'left', padding:20}}>DEALS</h3>
 
-            <image ></image>
-s            <Row>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={family_meals} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Family meals</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={side_snack} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Sides and Snacks</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={desert} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Deserts</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={drink} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Drinks</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-
-            </Row>
-
+            <div className="dealItem">
+            <Row xs="12" className = "box">
+              <Media tag="li">
+                <Col xs="7">
+                  <Media body>
+                    <Media heading>
+                      Item
+                    </Media>
+                    <p className = "itemDescription">2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos</p>
+                  </Media>
+                </Col>
+                <Col xs="5">
+                  <Media right href="#">
+                    <Media object className="dealImageSytle" src={deal_spicy_gochujang_a} alt="Generic placeholder image" />
+                  </Media>            
+                </Col>
+              </Media>
+             </Row>
+            </div>
             <header className="App-header">
             </header>
 
