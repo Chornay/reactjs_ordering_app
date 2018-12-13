@@ -41,7 +41,7 @@ class ShaerMenuScreen extends Component {
           <Container>          
 
             <Row style={{padding:20}}>
-              <Col style={{backgroundColor:'white'}}>
+              <Col>
                 <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
               </Col>
             </Row>

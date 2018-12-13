@@ -21,9 +21,10 @@ import drink from '../images/drink.jpeg'
 class ForOneMenuScreen extends Component {
    render() {
        return (
-         <div>
+      <div>
+        <Container>
         <Row style={{padding:20}}>
-        <Col style={{backgroundColor:'white'}}>
+        <Col>
           <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
         </Col>
       </Row>
@@ -40,7 +41,7 @@ class ForOneMenuScreen extends Component {
 
       <image ></image>
 
-      <Row>
+      <Row xs="12">
         <Col xs="6">
           <Card onClick={()=>{console.log('here')}}>
             <CardImg top style={{height:150}} src={chicken_meal} alt="Card image cap" />
@@ -83,6 +84,9 @@ class ForOneMenuScreen extends Component {
         </Col>
 
       </Row>
+
+        </Container>
+                    
       </div>
        );
    }

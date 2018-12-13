@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 5px;
 }
 
 .start-order {
@@ -10,8 +11,7 @@
   color:black;
 }
 .App-header {
-
-  background-color: white;
+  background-color: red;
   /* min-height: 100vh;s */
   display: flex;
   flex-direction: column;

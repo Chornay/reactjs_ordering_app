@@ -37,7 +37,7 @@ class MainLayout extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{backgroundColor:'#f3f0e2'}}>
         <Navbar color="white" light>
           <div class="container">
             <NavbarBrand onClick={this.toggle}>
