@@ -11,59 +11,72 @@ import drink from '../images/drink.jpeg'
 
 class MenuItemDetailScreen extends Component {
 
-  state = {
-    total_chicken: 3,
-    chicken_ori: 4,
-    chicken_spicy: 3,
-    isDecreaseOriginalChickenDisabled : false,
-    isIncreaseOriginalChickenDisabled : false,
-    isDecreaseSpicyChickenDisabled : false,
-    isIncreaseSpicyChickenDisabled : false,
+  constructor(props){
+
+    super(props);
+
+    this.state = {    
+      chicken_total: 6,
+      chicken_ori: 6,
+      chicken_spicy: 0,
+      isDecreaseOriginalChickenDisabled: false,
+      isIncreaseOriginalChickenDisabled: false,
+      isDecreaseSpicyChickenDisabled: false,
+      isIncreaseSpicyChickenDisabled: false,   
+    }
+
+  }
+
+  
+
+  componentDidMount(){
+
+    this.updateDisablingButton();
   }
 
   updateDisablingButton = () => {
 
-    console.log('log',this.state.chicken_ori);
+    console.log('log', this.state.chicken_ori);
 
     // For Original
-    if (this.state.chicken_ori <= 0  ) {
+    if (this.state.chicken_ori <= 0) {
       this.setState({
-        isDecreaseOriginalChickenDisabled:true,
+        isDecreaseOriginalChickenDisabled: true,
       });
-    }else{
+    } else {
       this.setState({
-        isDecreaseOriginalChickenDisabled:false,
+        isDecreaseOriginalChickenDisabled: false,
       });
     }
 
-    if (this.state.chicken_ori >= this.state.chicken_total   ) {
+    if (this.state.chicken_ori >= this.state.chicken_total) {
       this.setState({
-        isIncreaseOriginalChickenDisabled:true,
+        isIncreaseOriginalChickenDisabled: true,
       });
-    }else{
+    } else {
       this.setState({
-        isIncreaseOriginalChickenDisabled:false,
+        isIncreaseOriginalChickenDisabled: false,
       });
     }
 
     // For Spicy
-    if (this.state.chicken_spicy <= 0  ) {
+    if (this.state.chicken_spicy <= 0) {
       this.setState({
-        isDecreaseSpicyChickenDisabled:true,
+        isDecreaseSpicyChickenDisabled: true,
       });
-    }else{
+    } else {
       this.setState({
-        isDecreaseSpicyChickenDisabled:false,
+        isDecreaseSpicyChickenDisabled: false,
       });
     }
 
-    if (this.state.chicken_spicy >= this.state.chicken_total  ) {
+    if (this.state.chicken_spicy >= this.state.chicken_total) {
       this.setState({
-        isIncreaseSpicyChickenDisabled:true,
+        isIncreaseSpicyChickenDisabled: true,
       });
-    }else{
+    } else {
       this.setState({
-        isIncreaseSpicyChickenDisabled:false,
+        isIncreaseSpicyChickenDisabled: false,
       });
     }
 
@@ -112,13 +125,35 @@ class MenuItemDetailScreen extends Component {
         </div>
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>Menu Item</h3>
-        
+
         <div>
-          <img style={{ width: 150 }} src={chicken_meal} />
+          <img style={{width:150}} alt="" src={chicken_meal} />
           <h1>2-PC COMBO</h1>
-          <button style={{ backgroundColor: 'red' }} onClick={this.state.increment}>-</button>
-          {this.state.chicken_ori}
-          <button style={{ backgroundColor: 'red' }}>+</button>
+
+          <h1>Chicken</h1>
+          <p>max: {this.state.chicken_total}</p>
+          <h4>Chicken Original</h4>
+          <button disabled={this.state.isDecreaseOriginalChickenDisabled} onClick={this.decreaseOriginalChicken} style={{ backgroundColor: 'red' }}>-</button>
+          <span>{this.state.chicken_ori}</span>
+          <button disabled={this.state.isIncreaseOriginalChickenDisabled} onClick={this.increaseOriginalChicken} style={{ backgroundColor: 'red' }} >+</button>
+
+          <br />
+          <br />
+
+          <h4>Chicken Spicy</h4>
+          <button disabled={this.state.isDecreaseSpicyChickenDisabled} onClick={this.decreaseSpicyChicken} style={{ backgroundColor: 'red' }}>-</button>
+          <span>{this.state.chicken_spicy}</span>
+          <button disabled={this.state.isIncreaseSpicyChickenDisabled} onClick={this.increaseSpicyChicken} style={{ backgroundColor: 'red' }}>+</button>
+
+          <p>Input here: {this.state.chicken_total}</p>
+
+          <h3>In your meal:</h3>
+
+          <ul>
+            {this.state.chicken_ori > 0 ? (<li>{this.state.chicken_ori} Original Recipe Chicken</li>) : null }
+            {this.state.chicken_spicy > 0 ?<li>{this.state.chicken_spicy} Spicy Recipe Chicken</li> : null }
+
+          </ul>
 
         </div>
       </div>
