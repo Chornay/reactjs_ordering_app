@@ -44,9 +44,6 @@ class MenuListScreen extends Component {
           </Card>  
         </Col>
         
-        
-        
-
       </Row>
       </div>
        );
