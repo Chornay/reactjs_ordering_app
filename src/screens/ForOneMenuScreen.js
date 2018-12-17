@@ -39,7 +39,7 @@ class ForOneMenuScreen extends Component {
 
       <h3 style={{textAlign: 'left', padding:20}}>MEALS FOR ONE</h3>
 
-      <image ></image>
+      
 
       <Row xs="12">
         <Col xs="6">

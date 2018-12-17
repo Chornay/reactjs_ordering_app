@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 import { Route, Link } from "react-router-dom";
 
+
 import {
-  Container,Row, Col, Navbar,
-  NavbarBrand, Nav, NavItem,
-  NavLink, Modal, ModalHeader, ModalBody, ModalFooter
+  Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap"
+
 
 import ForOneMenuScreen from "../screens/ForOneMenuScreen"
 import ShareMenuScreen from "../screens/ShareMenuScreen"
@@ -33,13 +33,13 @@ class MainLayout extends Component {
   render() {
     return (
       <div style={{backgroundColor:'#f3f0e2'}}>
-        <nav className="navbar navbar-light bg-light"  color="white" light>
+        <nav className="navbar navbar-light bg-light"  color="white">
           <div className="container">
             <a className="navbar-brand" onClick={this.toggle}>
               <span className="navbar-toggler-icon" />
             </a>
 
-            <nav className="ml-auto" navbar>
+            <nav className="ml-auto" >
               <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link" href="/login/">Sign In</a>
@@ -50,8 +50,8 @@ class MainLayout extends Component {
         </nav>
 
         <div className="App">
-          <Container>
-            <Row
+          <div className="container">
+            <div className="row"
               style={{
                 backgroundColor: "white",
                 alignItems: "center",
@@ -67,11 +67,11 @@ class MainLayout extends Component {
               <a style={{ padding: 10 }} href="/deals/">
                 Deals
               </a>
-              <Col className="float-right">
+              <div  className=" col float-right">
                 <p style={{ textAlign: "right" }}>RM 10.00</p>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* The Screens  */}
@@ -89,7 +89,7 @@ class MainLayout extends Component {
           isOpen={this.state.isOpen}
           toggle={this.toggle}
           className={this.props.className}
-          style={{padding:0, margin:0, borderRadius:0}}
+          // style={{padding:0, margin:0, borderRadius:0}}
         >
           <ModalHeader toggle={this.toggle}>Menu</ModalHeader>
           <ModalBody>
