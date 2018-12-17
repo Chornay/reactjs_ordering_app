@@ -39,9 +39,9 @@ class MainLayout extends Component {
     return (
       <div style={{backgroundColor:'#f3f0e2'}}>
         <Navbar color="white" light>
-          <div class="container">
+          <div className="container">
             <NavbarBrand onClick={this.toggle}>
-              <span class="navbar-toggler-icon" />
+              <span className="navbar-toggler-icon" />
             </NavbarBrand>
 
             <Nav className="ml-auto" navbar>
@@ -70,7 +70,7 @@ class MainLayout extends Component {
               <a style={{ padding: 10 }} href="/deals/">
                 Deals
               </a>
-              <Col class="float-right">
+              <Col className="float-right">
                 <p style={{ textAlign: "right" }}>RM 10.00</p>
               </Col>
             </Row>

@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 
-import {
-  Button, Row, Col
-} from "reactstrap";
 
 import kfc_promotion from '../images/kfc_promotion.jpg'
 import chicken_meal from '../images/chicken_meal.jpeg'
+
 import buger_meals from '../images/buger_meals.jpg'
 import side_snack from '../images/side_snack.jpg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
 
 class MenuItemDetailScreen extends Component {
-
 
   state = {
     total_chicken: 3,
@@ -110,25 +107,23 @@ class MenuItemDetailScreen extends Component {
       <div>
         <div className="row" style={{ padding: 20 }}>
           <div className="col" style={{ backgroundColor: 'white' }}>
-            <button type="button" style={{ backgroundColor: "red" }} color="secondary" size="lg" block>START MY ORDER</button>
+            <button type="button" className="btn btn-secondary btn-block" style={{ backgroundColor: "red" }} color="secondary" size="lg">START MY ORDER</button>
           </div>
         </div>
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>Menu Item</h3>
-        <image></image>
-
+        
         <div>
-          <img top style={{ width: 150 }} src={chicken_meal} />
-
+          <img style={{ width: 150 }} src={chicken_meal} />
           <h1>2-PC COMBO</h1>
           <button style={{ backgroundColor: 'red' }} onClick={this.state.increment}>-</button>
           {this.state.chicken_ori}
           <button style={{ backgroundColor: 'red' }}>+</button>
 
-
         </div>
       </div>
-    );
+    )
+
   }
 }
 
