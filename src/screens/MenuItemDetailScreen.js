@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
 
 import {
-  Container,
-  Card, Button, CardTitle, CardBody,
-  CardText, CardImg, CardSubtitle, CardDeck,
-  Row, Col, Collapse, Navbar,
-  NavbarToggler, NavbarBrand, Nav, NavItem,
-  NavLink, UncontrolledDropdown, DropdownToggle,
-  DropdownMenu, DropdownItem,
-  Modal, ModalHeader, ModalBody, ModalFooter
+  Button, Row, Col
 } from "reactstrap";
 
 import kfc_promotion from '../images/kfc_promotion.jpg'
@@ -25,13 +18,89 @@ class MenuItemDetailScreen extends Component {
     total_chicken: 3,
     chicken_ori: 4,
     chicken_spicy: 3,
+    isDecreaseOriginalChickenDisabled : false,
+    isIncreaseOriginalChickenDisabled : false,
+    isDecreaseSpicyChickenDisabled : false,
+    isIncreaseSpicyChickenDisabled : false,
   }
 
-  increment = () => {
-    if (this.state.chicken_spicy = this.state.chicken_spicy + 1) { }
-    return this.state.chicken_ori = this.state.chicken_ori - 1;
+  updateDisablingButton = () => {
+
+    console.log('log',this.state.chicken_ori);
+
+    // For Original
+    if (this.state.chicken_ori <= 0  ) {
+      this.setState({
+        isDecreaseOriginalChickenDisabled:true,
+      });
+    }else{
+      this.setState({
+        isDecreaseOriginalChickenDisabled:false,
+      });
+    }
+
+    if (this.state.chicken_ori >= this.state.chicken_total   ) {
+      this.setState({
+        isIncreaseOriginalChickenDisabled:true,
+      });
+    }else{
+      this.setState({
+        isIncreaseOriginalChickenDisabled:false,
+      });
+    }
+
+    // For Spicy
+    if (this.state.chicken_spicy <= 0  ) {
+      this.setState({
+        isDecreaseSpicyChickenDisabled:true,
+      });
+    }else{
+      this.setState({
+        isDecreaseSpicyChickenDisabled:false,
+      });
+    }
+
+    if (this.state.chicken_spicy >= this.state.chicken_total  ) {
+      this.setState({
+        isIncreaseSpicyChickenDisabled:true,
+      });
+    }else{
+      this.setState({
+        isIncreaseSpicyChickenDisabled:false,
+      });
+    }
+
   }
 
+
+  // Changes
+
+  increaseOriginalChicken = () => {
+    this.state.chicken_ori = this.state.chicken_ori + 1;
+    this.state.chicken_spicy = this.state.chicken_spicy - 1;
+
+    this.updateDisablingButton();
+
+  }
+
+  decreaseOriginalChicken = () => {
+    this.state.chicken_ori = this.state.chicken_ori - 1;
+    this.state.chicken_spicy = this.state.chicken_spicy + 1;
+
+    this.updateDisablingButton();
+  }
+
+  increaseSpicyChicken = () => {
+    this.state.chicken_spicy = this.state.chicken_spicy + 1;
+    this.state.chicken_ori = this.state.chicken_ori - 1;
+    this.updateDisablingButton();
+  }
+
+  decreaseSpicyChicken = () => {
+    this.state.chicken_spicy = this.state.chicken_spicy - 1;
+    this.state.chicken_ori = this.state.chicken_ori + 1;
+    this.updateDisablingButton();
+  }
 
 
 
@@ -39,11 +108,11 @@ class MenuItemDetailScreen extends Component {
 
     return (
       <div>
-        <Row style={{ padding: 20 }}>
-          <Col style={{ backgroundColor: 'white' }}>
-            <Button style={{ backgroundColor: "red" }} color="secondary" size="lg" block>START MY ORDER</Button>
-          </Col>
-        </Row>
+        <div className="row" style={{ padding: 20 }}>
+          <div className="col" style={{ backgroundColor: 'white' }}>
+            <button type="button" style={{ backgroundColor: "red" }} color="secondary" size="lg" block>START MY ORDER</button>
+          </div>
+        </div>
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>Menu Item</h3>
         <image></image>
