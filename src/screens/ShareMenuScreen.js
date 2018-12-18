@@ -17,6 +17,7 @@ import {
   DropdownMenu, DropdownItem,
   Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
+import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class ShaerMenuScreen extends Component {
   constructor(props) {
@@ -37,14 +38,10 @@ class ShaerMenuScreen extends Component {
   render() {
     return (
       <div>
-        <div className="App">
-          <Container>          
+        <div className="container">
+               
 
-            <Row style={{padding:20}}>
-              <Col>
-                <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
-              </Col>
-            </Row>
+            <StartMyOrderButton/>
 
             <Row style={{padding:20}}>
               <Col xs="12">
@@ -95,8 +92,7 @@ class ShaerMenuScreen extends Component {
 
             <header className="App-header">
             </header>
-
-          </Container>         
+     
         </div>
 
       </div>

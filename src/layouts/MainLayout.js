@@ -1,15 +1,12 @@
-import React, { Component } from "react";
-
-import { Route, Link, Switch } from "react-router-dom";
-
+import React, { Component } from "react"
+import { Route, Link, Switch } from "react-router-dom"
 import {
-  Container,Row, Col, Modal, ModalHeader, ModalBody, ModalFooter
+  Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap"
 
 import ForOneMenuScreen from "../screens/ForOneMenuScreen"
 import ShareMenuScreen from "../screens/ShareMenuScreen"
 import DealsMenuScreen from "../screens/DealsMenuScreen"
-
 import MenuListScreen from '../screens/MenuListScreen'
 import MenuItemDetailScreen from '../screens/MenuItemDetailScreen'
 

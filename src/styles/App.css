@@ -3,6 +3,10 @@
   padding: 5px;
 }
 
+body{
+  background-color:rgb(243, 240, 226);
+}
+
 .start-order {
   color: white;
 }

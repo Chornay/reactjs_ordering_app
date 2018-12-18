@@ -17,37 +17,34 @@ import buger_meals from '../images/buger_meals.jpg'
 import side_snack from '../images/side_snack.jpg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
+import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class MenuListScreen extends Component {
-   render() {
-       return (
-         <div>
-        <Row style={{padding:20}}>
-        <Col style={{backgroundColor:'white'}}>
-          <Button style={{backgroundColor:"red"}} color="secondary" size="lg" block>START MY ORDER</Button>
-        </Col>
-      </Row>
+  render() {
+    return (
+      <div className="container">
 
+        <StartMyOrderButton />
 
-      <h3 style={{textAlign: 'left', padding:20}}>Chicken Meals</h3>
+        <h3 style={{ textAlign: 'left', padding: 20 }}>Chicken Meals</h3>
 
-      <image ></image>
+        <image ></image>
 
-      <Row>
-        <Col xs="12">
-          <Card >
-            
-            <CardBody>
-            <img top style={{width:150}} src={chicken_meal} />
-              <a href="/menu/item/2-pc-combo">2-PC COMBO</a>
-            </CardBody>
-          </Card>  
-        </Col>
-        
-      </Row>
+        <Row>
+          <Col xs="12">
+            <Card >
+
+              <CardBody>
+                <img top style={{ width: 150 }} src={chicken_meal} />
+                <a href="/menu/item/2-pc-combo">2-PC COMBO</a>
+              </CardBody>
+            </Card>
+          </Col>
+
+        </Row>
       </div>
-       );
-   }
+    );
+  }
 }
 
 
