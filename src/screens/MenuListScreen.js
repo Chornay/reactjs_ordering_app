@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
 
 import {
-  Container,
-  Card, Button, CardTitle, CardBody,
-  CardText, CardImg, CardSubtitle, CardDeck,
-  Row, Col, Collapse, Navbar,
-  NavbarToggler, NavbarBrand, Nav, NavItem,
-  NavLink, UncontrolledDropdown, DropdownToggle,
-  DropdownMenu, DropdownItem,
-  Modal, ModalHeader, ModalBody, ModalFooter
+  Card, CardBody,
+  Row, Col
 } from "reactstrap";
 
 import kfc_promotion from '../images/kfc_promotion.jpg'
@@ -29,18 +23,20 @@ class MenuListScreen extends Component {
         <h3 style={{ textAlign: 'left', padding: 20 }}>Chicken Meals</h3>
 
 
-        <Row>
-          <Col xs="12">
-            <Card >
+        <div className="row">
+          <div className="col-12">
+            <a href="/menu/item/2-pc-combo">
+              <div className="card" >
 
-              <CardBody>
-                <img top style={{ width: 150 }} src={chicken_meal} />
-                <a href="/menu/item/2-pc-combo">2-PC COMBO</a>
+                <CardBody>
+                  <img top style={{ width: 150 }} src={chicken_meal} />
+                  2-PC COMBO
               </CardBody>
-            </Card>
-          </Col>
-
-        </Row>
+              </div>
+              </a>
+          </div>
+        
+        </div>
       </div>
     );
   }

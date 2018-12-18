@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-
-import {
-  Card, CardTitle, CardBody,
-  CardImg, Col
-} from "reactstrap";
+import { Link } from 'react-router-dom'
 
 import kfc_promotion from '../images/kfc_promotion.jpg'
 import chicken_meal from '../images/chicken_meal.jpeg'
@@ -62,14 +58,18 @@ class ForOneMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
-          <div className="col-6 item-meal" style={{padding:5}} onClick={()=>{ console.log('hi') }} >
-            <div className="card" onClick={() => { console.log('here') }}>
+          
+          <div className="col-6 item-meal" style={{padding:5}} >
+          <Link to="/menu/for-one/chicken">
+            <div className="card" >
               <img className="card-img-top img-thumbnail img-fluid" style={{ height: 150, borderRadius:0, border:0 }} src={meal.image} alt="cap"/>
               <div className='card-body' style={{height:50, paddingLeft:8}}>
                 <p style={{fontWeight:'500'}}><a href="/menu/for-one/chicken">{meal.name}</a></p>
               </div>
             </div>
+            </Link>
           </div>
+          
         )
       })
     )
