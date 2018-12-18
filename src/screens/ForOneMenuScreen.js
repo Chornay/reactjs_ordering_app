@@ -38,9 +38,9 @@ class ForOneMenuScreen extends Component {
           {/* Header */}
           <div className='row' style={{ padding: 20 }}>
             <div className="col-12">
-              <Card>
-                <CardImg top style={{ height: 150 }} src={kfc_promotion} alt="Card image cap" />
-              </Card>
+              <div className="card">
+                <img className='card-img' top style={{ height: 150 }} src={kfc_promotion} alt="Card cap" />
+              </div>
             </div>
           </div>
 
@@ -62,11 +62,11 @@ class ForOneMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
-          <div className="col-6" style={{padding:5}} onClick={()=>{ console.log('hi') }} >
+          <div className="col-6 item-meal" style={{padding:5}} onClick={()=>{ console.log('hi') }} >
             <div className="card" onClick={() => { console.log('here') }}>
-              <img className="card-img-top" style={{ height: 150 }} src={meal.image} alt="Card cap"/>
-              <div className='card-body' style={{height:50}}>
-                <p className='card-title' style={{fontWeight:'500'}}><a href="/menu/for-one/chicken">{meal.name}</a></p>
+              <img className="card-img-top img-thumbnail img-fluid" style={{ height: 150, borderRadius:0, border:0 }} src={meal.image} alt="cap"/>
+              <div className='card-body' style={{height:50, paddingLeft:8}}>
+                <p style={{fontWeight:'500'}}><a href="/menu/for-one/chicken">{meal.name}</a></p>
               </div>
             </div>
           </div>

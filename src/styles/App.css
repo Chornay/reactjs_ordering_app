@@ -24,3 +24,7 @@ body{
   color: white;
 }
 
+.item-meal{
+  cursor: pointer;
+}
+
