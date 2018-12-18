@@ -29,21 +29,13 @@ class MainLayout extends Component {
   render() {
     return (
       <div style={{backgroundColor:'#f3f0e2'}}>
-<<<<<<< HEAD
         <nav className="navbar navbar-light bg-light"  color="white">
-=======
-        <nav className="navbar navbar-light bg-light" color="white">
->>>>>>> c6714d7b45e1fa6d5152a82b0181146482649948
           <div className="container">
             <a className="navbar-brand" onClick={this.toggle} href="#">
               <span className="navbar-toggler-icon" />
             </a>
-<<<<<<< HEAD
 
             <nav className="ml-auto" >
-=======
-            <nav className="ml-auto">
->>>>>>> c6714d7b45e1fa6d5152a82b0181146482649948
               <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link" href="/login/">Sign In</a>
@@ -53,31 +45,6 @@ class MainLayout extends Component {
           </div>
         </nav>
 
-<<<<<<< HEAD
-        <div className="App">
-          <div className="container">
-            <div className="row"
-              style={{
-                backgroundColor: "white",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
-              <a style={{ padding: 10 }} href="/for-one">
-                For One
-              </a>
-              <a style={{ padding: 10 }} href="/share/">
-                Share
-              </a>
-              <a style={{ padding: 10 }} href="/deals/">
-                Deals
-              </a>
-              <div  className=" col float-right">
-                <p style={{ textAlign: "right" }}>RM 10.00</p>
-              </div>
-            </div>
-          </div>
-=======
         <div className="sub-navigation" style={{backgroundColor:'white'}}>        
             <div className="container">
               <div className="row"
@@ -101,7 +68,6 @@ class MainLayout extends Component {
                 </div>
               </div>
             </div>          
->>>>>>> c6714d7b45e1fa6d5152a82b0181146482649948
         </div>
 
         {/* The Screens  */}
@@ -117,10 +83,7 @@ class MainLayout extends Component {
           isOpen={this.state.isOpen}
           toggle={this.toggle}
           className={this.props.className}
-<<<<<<< HEAD
           // style={{padding:0, margin:0, borderRadius:0}}
-=======
->>>>>>> c6714d7b45e1fa6d5152a82b0181146482649948
         >
           <ModalHeader toggle={this.toggle}>Menu</ModalHeader>
           <ModalBody>            

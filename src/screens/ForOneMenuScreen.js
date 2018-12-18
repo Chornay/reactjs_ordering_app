@@ -31,9 +31,6 @@ class ForOneMenuScreen extends Component {
         <div className="container">
           <StartMyOrderButton />
 
-<<<<<<< HEAD
-      
-=======
           {/* Header */}
           <div className='row' style={{ padding: 20 }}>
             <div className="col-12">
@@ -42,7 +39,6 @@ class ForOneMenuScreen extends Component {
               </div>
             </div>
           </div>
->>>>>>> c6714d7b45e1fa6d5152a82b0181146482649948
 
           {/* Title */}
           <h3 style={{ textAlign: 'left', padding: 20 }}>MEALS FOR ONE</h3>
