@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import {
   Card, CardTitle, CardBody,
-  CardImg, Row, Col } from "reactstrap";
+  CardImg, Col
+} from "reactstrap";
 
 import kfc_promotion from '../images/kfc_promotion.jpg'
 import chicken_meal from '../images/chicken_meal.jpeg'
@@ -13,72 +14,67 @@ import drink from '../images/drink.jpeg'
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class ForOneMenuScreen extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [
+        { name: 'Chicken Meals', slug: 'chicken', image: chicken_meal },
+        { name: 'Burgers', slug: 'burgers', image: buger_meals },
+        { name: 'Sides and Snacks', slug: 'sides', image: side_snack },
+        { name: 'Deserts', slug: 'deserts', image: desert },
+        { name: 'Drinks', slug: 'drinks', image: drink },
+      ]
+    }
+  }
+
   render() {
     return (
       <div>
         <div className="container">
-          <StartMyOrderButton/>
+          <StartMyOrderButton />
 
+          {/* Header */}
           <div className='row' style={{ padding: 20 }}>
-            <Col xs="12">
+            <div className="col-12">
               <Card>
                 <CardImg top style={{ height: 150 }} src={kfc_promotion} alt="Card image cap" />
               </Card>
-            </Col>
+            </div>
           </div>
 
+          {/* Title */}
           <h3 style={{ textAlign: 'left', padding: 20 }}>MEALS FOR ONE</h3>
 
-
-          <div className="row" xs="12">
-            <Col xs="6">
-              <Card onClick={() => { console.log('here') }}>
-                <CardImg top style={{ height: 150 }} src={chicken_meal} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle><a href="/menu/for-one/chicken">Chicken Meals</a></CardTitle>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col xs="6">
-              <Card>
-                <CardImg top style={{ height: 150 }} src={buger_meals} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Burgers</CardTitle>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col xs="6">
-              <Card>
-                <CardImg top style={{ height: 150 }} src={side_snack} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Sides and Snacks</CardTitle>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col xs="6">
-              <Card>
-                <CardImg top style={{ height: 150 }} src={desert} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Deserts</CardTitle>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col xs="6">
-              <Card>
-                <CardImg top style={{ height: 150 }} src={drink} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Drinks</CardTitle>
-                </CardBody>
-              </Card>
-            </Col>
-
+          {/* Contents */}
+          <div className="row">
+            {this.renderMeals()}
           </div>
-
         </div>
 
       </div>
     );
   }
+
+  renderMeals() {
+    return (
+
+      this.state.data.map((meal) => {
+        return (
+          <div className="col-6" style={{padding:5}} onClick={()=>{ console.log('hi') }} >
+            <div className="card" onClick={() => { console.log('here') }}>
+              <img className="card-img-top" style={{ height: 150 }} src={meal.image} alt="Card cap"/>
+              <div className='card-body' style={{height:50}}>
+                <p className='card-title' style={{fontWeight:'500'}}><a href="/menu/for-one/chicken">{meal.name}</a></p>
+              </div>
+            </div>
+          </div>
+        )
+      })
+    )
+  }
+
 }
 
 
