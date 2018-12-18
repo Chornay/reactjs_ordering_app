@@ -19,32 +19,12 @@ import side_snack from '../images/side_snack.jpg'
 import family_meals from '../images/family_meals.jpeg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
-import '../StyleDealScreen.css'
+
 
 import {
-  Container,
-  Card,
-  Button,
-  CardTitle,
-  CardBody,
-  CardText,
-  CardImg,
-  CardSubtitle,
-  CardDeck,
-  Row,
-  Col,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Media,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Container, Card, Button, CardImg,
+  Row, Col, Media,
+} from 'reactstrap';
 
 class DealsMenuScreen extends Component {
   constructor(props) {
@@ -60,7 +40,6 @@ class DealsMenuScreen extends Component {
       isOpen: !this.state.isOpen
     });
   }
-
 
   render() {
     return (
