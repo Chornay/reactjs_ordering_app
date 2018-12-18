@@ -55,13 +55,13 @@ class MainLayout extends Component {
                   justifyContent: "center"
                 }}
               >
-                <a style={{ padding: 10 }} href="/for-one">
+                <a style={{ padding:10, fontWeight:400, color:'black'}} href="/menu/for-one">
                   For One
                 </a>
-                <a style={{ padding: 10 }} href="/share/">
+                <a style={{ padding:10, fontWeight:400, color:'black'}} href="/menu/share/">
                   Share
                 </a>
-                <a style={{ padding: 10 }} href="/deals/">
+                <a style={{ padding:10, fontWeight:400, color:'black'}} href="/menu/deals/">
                   Deals
                 </a>
                 <div className="col float-right">

@@ -46,7 +46,7 @@ class ForOneMenuScreen extends Component {
           <Card onClick={()=>{console.log('here')}}>
             <CardImg top style={{height:150}} src={chicken_meal} alt="Card image cap" />
             <CardBody>
-              <CardTitle><a href="/for-one/chicken">Chicken Meals</a></CardTitle>
+              <CardTitle><a href="/menu/for-one/chicken">Chicken Meals</a></CardTitle>
             </CardBody>
           </Card>  
         </Col>

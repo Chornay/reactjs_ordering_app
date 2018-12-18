@@ -39,7 +39,7 @@ class MenuListScreen extends Component {
             
             <CardBody>
             <img top style={{width:150}} src={chicken_meal} />
-              <a href="/item/2-pc-combo">2-PC COMBO</a>
+              <a href="/menu/item/2-pc-combo">2-PC COMBO</a>
             </CardBody>
           </Card>  
         </Col>
