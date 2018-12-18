@@ -20,6 +20,8 @@ import family_meals from '../images/family_meals.jpeg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
 
+import '../styles/DealScreen.css'
+
 import {
   Container, Card, Button, CardImg,
   Row, Col, Media,
@@ -29,258 +31,81 @@ import StartMyOrderButton from '../components/StartMyOrderButton';
 class DealsMenuScreen extends Component {
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
-    };
+      data:[
+        { name: 'Spicy Honey Gocujang Sauce', price: 2.45, description: '2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos', image: deal_spicy_gochujang_a },
+        { name: 'Spicy Gochujang Crunch 3-pc Combo', price: 23.20, description: '3 pieces of chicken, Spicy Honey Gochujang sauce, coleslaw, whipped potato, drink., coleslaw, whipped potatos', image: deal_spicy_gochujang_3pc },
+        { name: 'spicy Honey Gochujang Sauce', price: 2.45, description: '', image: deal_spicy_gochujang_3pc },
+        { name: '5-pc Hot & Spicy Prawns', price: 11.55, description: '', image: deal_spicy_prawn },
+        { name: 'Zinger Waffle Burger Combo', price: 19.60, description: 'Zinger Waffle Burger, potato wedges, drink.', image: deal_zwb_combo_delivery },
+        { name: 'Zinger Waffle Burger Mega Box', price: 24.25, description: '1 piece of chicken, Zinger Waffle Burger, potato wedges, drink.', image: deal_zwb_megabox_delivery },
+        { name: 'Mega Variety Box', price: 57.90, description: '6 pieces of chicken, 12 pieces of nuggets, potato wedges, dip, whipped potato, drink.', image: deal_mega_variety_box },
+        { name: 'Mango Peach Vanilla Pudding', price: 1.90, description: '', image: deal_pudding_mango },
+        { name: 'Gula Melaka Vanilla Pudding', price: 1.90, description: '', image: deal_pudding_gulamelaka },
+        { name: 'Salted Caramel Vanilla Pudding', price: 1.90, description: '', image: deal_pudding_caramel },
+      ]
+    }
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
+
+
 
   render() {
     return (
-      <div>
-{/* Start order button */}
-        {/* <div className="App"> */}
-          <Container style={{backgroundColor:'#f3f0e2'}}>          
-            <StartMyOrderButton/>
-{/* Promotions */}
-            <Row style={{padding:20}}>
-              <Col xs="12">
-                <Card>
-                  <CardImg top style={{height:150}} src={deal_promotions} alt="Card image cap" />
-                </Card>  
-              </Col>
-            </Row>
- 
+      // {/* Start order button */}
+      <div className="container" style={{ backgroundColor: '#f3f0e2' }}>
+        <StartMyOrderButton />
+        {/* Promotions */}
+        <Row style={{ padding: 20 }}>
+          <Col xs="12">
+            <Card>
+              <CardImg top style={{ height: 150 }} src={deal_promotions} alt="Card image cap" />
+            </Card>
+          </Col>
+        </Row>
 
-            <h3 style={{textAlign: 'left', padding:20}}>DEALS</h3>
-          
-{/* Deal items 1 */}
-            
-            <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7" className="itemDescription"> 
-                    <Media body>
-                      <Media heading className="dealHeading"> 
-                        <strong>Spicy Gochujang Crunch 2-pc Combo</strong>
-                        <br/>
-                        <strong>RM 17.90</strong>
-                      </Media>
-                      <p className = "itemDescription">2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos</p>
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_spicy_gochujang_a} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
 
-{/* Deal items 2 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Spicy Gochujang Crunch 3-pc Combo</strong>
-                        <br/>
-                        <strong>RM 23.20</strong>
-                      </Media>
-                      <p className = "itemDescription">3 pieces of chicken, Spicy Honey Gochujang sauce, coleslaw, whipped potato, drink.</p>
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_spicy_gochujang_3pc} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
+        <h3 style={{ textAlign: 'left', padding: 20 }}>DEALS</h3>
+        <Row xs="12" className="box">
+          {/*call funciton rendermeals*/}
+          {this.renderMeals()}
+        </Row>
 
-{/* Deal items 3 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Spicy Honey Gochujang Sauce</strong>
-                        <br/>
-                        <strong>RM 2.45</strong>
-                      </Media>
-                      {/* <strong className = "itemDescription"></strong>> */}
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#" >
-                      <Media object className="dealImageSytle" src={deal_spicy_gochujang_sauce} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-              
-{/* Deal items 4 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>5-pc Hot & Spicy Prawns</strong>
-                        <br/>
-                        <strong>RM 11.55</strong>
-                      </Media>
-                      {/* <strong className = "itemDescription">2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos</strong>  */}
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_spicy_prawn} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-
-{/* Deal items 5 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Zinger Waffle Burger Combo</strong>
-                        <br/>
-                        <strong>RM 19.60</strong>
-                      </Media>
-                      <p className = "itemDescription">Zinger Waffle Burger, potato wedges, drink.</p>
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_zwb_combo_delivery} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-
-{/* Deal items 6 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Zinger Waffle Burger Mega Box</strong>
-                        <br/>
-                        <strong>RM 24.25</strong>
-                      </Media>
-                      <p className = "itemDescription">1 piece of chicken, Zinger Waffle Burger, potato wedges, drink.</p>
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_zwb_megabox_delivery} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-
-{/* Deal items 7 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Mega Variety Box</strong>
-                        <br/>
-                        <strong>RM 57.90</strong>
-                      </Media>
-                      <p className = "itemDescription">6 pieces of chicken, 12 pieces of nuggets, potato wedges, dip, whipped potato, drink.</p>
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_mega_variety_box} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-
-{/* Deal items 8 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Mango Peach Vanilla Pudding</strong>
-                        <br/>
-                        <strong>RM 1.90</strong>
-                      </Media>
-                      {/* <strong className = "itemDescription">2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos</strong>  */}
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_pudding_mango} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-
-{/* Deal items 9 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Gula Melaka Vanilla Pudding</strong>
-                        <br/>
-                        <strong>RM 1.90</strong>
-                      </Media>
-                      {/* <strong className = "itemDescription">2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos</strong>  */}
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_pudding_gulamelaka} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
-
-{/* Deal items 10 */}
-              <Row xs="12" className="box">
-                <Media tag="li">
-                  <Col xs="7">
-                    <Media body>
-                      <Media heading className="dealHeading">
-                        <strong>Salted Caramel Vanilla Pudding</strong>
-                        <br/>
-                        <strong>RM 1.90</strong>
-                      </Media>
-                      {/* <strong className = "itemDescription">2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos</strong>  */}
-                    </Media>
-                  </Col>
-                  <Col xs="5">
-                    <Media right href="#">
-                      <Media object className="dealImageSytle" src={deal_pudding_caramel} alt="Generic placeholder image" />
-                    </Media>            
-                  </Col>
-                </Media>
-              </Row>
- {/* Header is not using  */}
-            <header className="App-header">
-            </header>
-
-          </Container>         
-        {/* </div> */}
-
+        {/* Header is not using  */}
+        <header className="App-header">
+        </header>
       </div>
     );
   }
+
+  renderMeals() {
+    return (
+
+      this.state.data.map((meal) => {
+        return (
+          <Media tag="li">
+            <Col xs="7">
+              <Media body>
+                <Media heading className="dealHeading">
+                  <strong>{meal.name}</strong>
+                  <br />
+                  <strong>RM{meal.price}</strong>
+                </Media>
+                <p className="itemDescription">{meal.description}</p>
+              </Media>
+            </Col>
+            <Col xs="5">
+              <Media right href="#">
+                <Media object className="dealImageSytle" src={meal.image} alt="Generic placeholder image" />
+              </Media>
+            </Col>
+          </Media>
+
+        )
+      })
+    )
+  }
 }
+
 
 
 export default DealsMenuScreen;

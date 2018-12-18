@@ -22,18 +22,16 @@ import StartMyOrderButton from '../components/StartMyOrderButton';
 class ShaerMenuScreen extends Component {
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
-    };
+      data: [
+        { name: 'Family meals', slug: 'familyMeals', image: family_meals },
+        { name: 'ides and Snacks', slug: 'sideSnacks', image: side_snack },
+        { name: 'Sides and Snacks', slug: 'sides', image: side_snack },
+        { name: 'Deserts', slug: 'deserts', image: desert },
+        { name: 'Drinks', slug: 'drinks', image: drink },
+      ]
+    }
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
 
   render() {
     return (
@@ -55,39 +53,7 @@ class ShaerMenuScreen extends Component {
 
             
             <Row>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={family_meals} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Family meals</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={side_snack} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Sides and Snacks</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={desert} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Deserts</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-              <Col xs="6">
-                <Card>
-                  <CardImg top style={{height:150}} src={drink} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>Drinks</CardTitle>
-                  </CardBody>
-                </Card>  
-              </Col>
-
+              {this.renderMeals()}
             </Row>
 
             <header className="App-header">
@@ -98,6 +64,27 @@ class ShaerMenuScreen extends Component {
       </div>
     );
   }
+  renderMeals() {
+    return (
+
+      this.state.data.map((meal) => {
+        return (
+          <div className="col-6 item-meal" style={{ padding: 5 }} >
+            <Link to="#">
+              <div className="card" >
+                <img className="card-img-top img-thumbnail img-fluid" style={{ height: 150, borderRadius: 0, border: 0 }} src={meal.image} alt="cap" />
+                <div className='card-body' style={{ height: 50, paddingLeft: 8 }}>
+                  <p style={{ fontWeight: '500' }}><a href="/menu/for-one/chicken">{meal.name}</a></p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+        )
+      })
+    )
+  }
+
 }
 
 export default ShaerMenuScreen; 

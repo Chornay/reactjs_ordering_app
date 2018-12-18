@@ -55,7 +55,6 @@ class ForOneMenuScreen extends Component {
 
   renderMeals() {
     return (
-
       this.state.data.map((meal) => {
         return (
           
