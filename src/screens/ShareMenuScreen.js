@@ -53,7 +53,6 @@ class ShaerMenuScreen extends Component {
 
             <h3 style={{textAlign: 'left', padding:20}}>SHARE</h3>
 
-            <image ></image>
             <Row>
               <Col xs="6">
                 <Card>

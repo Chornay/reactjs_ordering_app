@@ -28,12 +28,12 @@ class MainLayout extends Component {
   render() {
     return (
       <div style={{backgroundColor:'#f3f0e2'}}>
-        <nav className="navbar navbar-light bg-light" color="white" light>
+        <nav className="navbar navbar-light bg-light" color="white">
           <div className="container">
             <a className="navbar-brand" onClick={this.toggle} href="#">
               <span className="navbar-toggler-icon" />
             </a>
-            <nav className="ml-auto" navbar>
+            <nav className="ml-auto">
               <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link" href="/login/">Sign In</a>

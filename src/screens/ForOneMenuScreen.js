@@ -19,19 +19,18 @@ class ForOneMenuScreen extends Component {
         <div className="container">
           <StartMyOrderButton/>
 
-          <Row style={{ padding: 20 }}>
+          <div className='row' style={{ padding: 20 }}>
             <Col xs="12">
               <Card>
                 <CardImg top style={{ height: 150 }} src={kfc_promotion} alt="Card image cap" />
               </Card>
             </Col>
-          </Row>
+          </div>
 
           <h3 style={{ textAlign: 'left', padding: 20 }}>MEALS FOR ONE</h3>
 
-          <image ></image>
 
-          <Row xs="12">
+          <div className="row" xs="12">
             <Col xs="6">
               <Card onClick={() => { console.log('here') }}>
                 <CardImg top style={{ height: 150 }} src={chicken_meal} alt="Card image cap" />
@@ -73,7 +72,7 @@ class ForOneMenuScreen extends Component {
               </Card>
             </Col>
 
-          </Row>
+          </div>
 
         </div>
 

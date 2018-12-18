@@ -28,7 +28,6 @@ class MenuListScreen extends Component {
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>Chicken Meals</h3>
 
-        <image ></image>
 
         <Row>
           <Col xs="12">

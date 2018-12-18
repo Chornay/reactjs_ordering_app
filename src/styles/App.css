@@ -16,7 +16,6 @@ body{
 }
 .App-header {
   background-color: red;
-  /* min-height: 100vh;s */
   display: flex;
   flex-direction: column;
   align-items:flex-start;
