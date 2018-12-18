@@ -3,6 +3,10 @@
   padding: 5px;
 }
 
+body{
+  background-color:rgb(243, 240, 226);
+}
+
 .start-order {
   color: white;
 }
@@ -12,12 +16,15 @@
 }
 .App-header {
   background-color: red;
-  /* min-height: 100vh;s */
   display: flex;
   flex-direction: column;
   align-items:flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.item-meal{
+  cursor: pointer;
 }
 

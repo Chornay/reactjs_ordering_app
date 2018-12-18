@@ -8,6 +8,7 @@ import buger_meals from '../images/buger_meals.jpg'
 import side_snack from '../images/side_snack.jpg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
+import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class MenuItemDetailScreen extends Component {
 
@@ -117,12 +118,8 @@ class MenuItemDetailScreen extends Component {
   render() {
 
     return (
-      <div>
-        <div className="row" style={{ padding: 20 }}>
-          <div className="col" style={{ backgroundColor: 'white' }}>
-            <button type="button" className="btn btn-secondary btn-block" style={{ backgroundColor: "red" }} color="secondary" size="lg">START MY ORDER</button>
-          </div>
-        </div>
+      <div className="container">
+        
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>Menu Item</h3>
 
