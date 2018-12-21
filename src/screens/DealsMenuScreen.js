@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import deal_promotions from '../images/deal_promotions.png'
-import deal_spicy_gochujang_a from '../images/deal_spicy_gochujang_a.png'
+
 import deal_spicy_gochujang_3pc from '../images/deal_spicy_gochujang_3pc.png'
 import deal_spicy_gochujang_sauce from '../images/deal_spicy_gochujang_sauce.png'
 import deal_spicy_prawn from '../images/deal_spicy_prawn.png'
@@ -23,7 +23,7 @@ import drink from '../images/drink.jpeg'
 import '../styles/DealScreen.css'
 
 import {
-  Container, Card, Button, CardImg,
+  Card, CardImg,
   Row, Col, Media,
 } from 'reactstrap';
 import StartMyOrderButton from '../components/StartMyOrderButton';
@@ -33,7 +33,7 @@ class DealsMenuScreen extends Component {
     super(props);
     this.state = {
       data:[
-        { name: 'Spicy Honey Gocujang Sauce', price: 2.45, description: '2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos', image: deal_spicy_gochujang_a },
+        { name: 'Spicy Honey Gocujang Sauce', price: 2.45, description: '2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos', image: require('../images/deal_spicy_gochujang_3pc.png') },
         { name: 'Spicy Gochujang Crunch 3-pc Combo', price: 23.20, description: '3 pieces of chicken, Spicy Honey Gochujang sauce, coleslaw, whipped potato, drink., coleslaw, whipped potatos', image: deal_spicy_gochujang_3pc },
         { name: 'spicy Honey Gochujang Sauce', price: 2.45, description: '', image: deal_spicy_gochujang_3pc },
         { name: '5-pc Hot & Spicy Prawns', price: 11.55, description: '', image: deal_spicy_prawn },
@@ -55,20 +55,19 @@ class DealsMenuScreen extends Component {
       <div className="container" style={{ backgroundColor: '#f3f0e2' }}>
         <StartMyOrderButton />
         {/* Promotions */}
-        <Row style={{ padding: 20 }}>
-          <Col xs="12">
-            <Card>
-              <CardImg top style={{ height: 150 }} src={deal_promotions} alt="Card image cap" />
-            </Card>
-          </Col>
-        </Row>
-
+        <div className="row" style={{ padding: 20 }}>
+          <div className="col-xs-12">
+            <div className="card">
+              <img className="card-img" top style={{ height: 150 }} src={deal_promotions} alt="Card cap" />
+            </div>
+          </div>
+        </div>
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>DEALS</h3>
-        <Row xs="12" className="box">
+        <div className="row-xl-12 box">
           {/*call funciton rendermeals*/}
           {this.renderMeals()}
-        </Row>
+        </div>
 
         {/* Header is not using  */}
         <header className="App-header">
@@ -82,9 +81,9 @@ class DealsMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
-          <Media tag="li">
-            <Col xs="7">
-              <Media body>
+          <Media tag="li" style={{marginBottom:10, backgroundColor:'white'}}>
+            
+              <Media body style={{padding:12}}>
                 <Media heading className="dealHeading">
                   <strong>{meal.name}</strong>
                   <br />
@@ -92,12 +91,12 @@ class DealsMenuScreen extends Component {
                 </Media>
                 <p className="itemDescription">{meal.description}</p>
               </Media>
-            </Col>
-            <Col xs="5">
+            
+            <div className="col-5">
               <Media right href="#">
                 <Media object className="dealImageSytle" src={meal.image} alt="Generic placeholder image" />
               </Media>
-            </Col>
+            </div>
           </Media>
 
         )
