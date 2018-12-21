@@ -14,7 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>          
           <Route path="/menu" component={MainLayout} />
-          <Route path="/login" component={SignInScreen} />          
+          <Route path="/login" component={SignInScreen} />         
           <Redirect from="/" to="/menu" />
           {/* <Route path="/" component={MenuItemDetailScreen} /> */}
           <Route component={NoMatchScreen}/>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import deal_promotions from '../images/deal_promotions.png'
 
@@ -49,7 +48,7 @@ class DealsMenuScreen extends Component {
         <StartMyOrderButton />
         {/* Promotions */}
         <div className="row" style={{ padding: 20 }}>
-          <div className="col-xs-12">
+          <div className="col-12">
             <div className="card">
               <img className="card-img" top style={{ height: 150 }} src={deal_promotions} alt="Card cap" />
             </div>
@@ -57,7 +56,7 @@ class DealsMenuScreen extends Component {
         </div>
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>DEALS</h3>
-        <div className="row-xl-12 box">
+        <div className="col-12 box">
           {/*call funciton rendermeals*/}
           {this.renderMeals()}
         </div>
