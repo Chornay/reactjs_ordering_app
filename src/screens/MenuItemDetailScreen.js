@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 
-
-import kfc_promotion from '../images/kfc_promotion.jpg'
 import chicken_meal from '../images/chicken_meal.jpeg'
-
-import buger_meals from '../images/buger_meals.jpg'
-import side_snack from '../images/side_snack.jpg'
-import desert from '../images/desert.jpg'
-import drink from '../images/drink.jpeg'
-import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class MenuItemDetailScreen extends Component {
 
@@ -28,17 +20,12 @@ class MenuItemDetailScreen extends Component {
 
   }
 
-  
-
   componentDidMount(){
-
     this.updateDisablingButton();
   }
 
   updateDisablingButton = () => {
-
     console.log('log', this.state.chicken_ori);
-
     // For Original
     if (this.state.chicken_ori <= 0) {
       this.setState({

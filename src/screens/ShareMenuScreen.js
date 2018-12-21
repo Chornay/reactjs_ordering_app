@@ -7,16 +7,6 @@ import family_meals from '../images/family_meals.jpeg'
 import desert from '../images/desert.jpg'
 import drink from '../images/drink.jpeg'
 
-import {
-  Container,
-  Card, Button, CardTitle, CardBody,
-  CardText, CardImg, CardSubtitle, CardDeck,
-  Row, Col, Collapse, Navbar,
-  NavbarToggler, NavbarBrand, Nav, NavItem,
-  NavLink, UncontrolledDropdown, DropdownToggle,
-  DropdownMenu, DropdownItem,
-  Modal, ModalHeader, ModalBody, ModalFooter
-} from "reactstrap";
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class ShaerMenuScreen extends Component {
@@ -37,24 +27,22 @@ class ShaerMenuScreen extends Component {
     return (
       <div>
         <div className="container">
-               
 
             <StartMyOrderButton/>
 
-            <Row style={{padding:20}}>
-              <Col xs="12">
-                <Card>
-                  <CardImg top style={{height:150}} src={kfc_promotion} alt="Card image cap" />
-                </Card>  
-              </Col>
-            </Row>
+            <div className="row" style={{padding:20}}>
+              <div className="col" xs="12">
+                <div className="card">
+                  <img className="card-img-top" style={{height:150}} src={kfc_promotion} alt="Card image cap" />
+                </div>  
+              </div>
+            </div>
 
             <h3 style={{textAlign: 'left', padding:20}}>SHARE</h3>
-
             
-            <Row>
+            <div className="row">
               {this.renderMeals()}
-            </Row>
+            </div>
 
             <header className="App-header">
             </header>
@@ -64,6 +52,7 @@ class ShaerMenuScreen extends Component {
       </div>
     );
   }
+  
   renderMeals() {
     return (
 

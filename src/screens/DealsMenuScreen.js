@@ -15,16 +15,10 @@ import deal_pudding_mango from '../images/deal_pudding_mango.png'
 import deal_pudding_gulamelaka from '../images/deal_pudding_gulamelaka.png'
 import deal_pudding_caramel from '../images/deal_pudding_caramel.png'
 
-import side_snack from '../images/side_snack.jpg'
-import family_meals from '../images/family_meals.jpeg'
-import desert from '../images/desert.jpg'
-import drink from '../images/drink.jpeg'
-
 import '../styles/DealScreen.css'
 
 import {
-  Container, Card, Button, CardImg,
-  Row, Col, Media,
+  Col, Media,
 } from 'reactstrap';
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
@@ -47,28 +41,25 @@ class DealsMenuScreen extends Component {
     }
   }
 
-
-
   render() {
     return (
       // {/* Start order button */}
       <div className="container" style={{ backgroundColor: '#f3f0e2' }}>
         <StartMyOrderButton />
         {/* Promotions */}
-        <Row style={{ padding: 20 }}>
-          <Col xs="12">
-            <Card>
-              <CardImg top style={{ height: 150 }} src={deal_promotions} alt="Card image cap" />
-            </Card>
-          </Col>
-        </Row>
-
+        <div claName="row" style={{ padding: 20 }}>
+          <div className="col" xs="12">
+            <div className="card">
+              <img className="card-img-top" style={{ height: 150 }} src={deal_promotions} alt="Card image cap" />
+            </div>
+          </div>
+        </div>
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>DEALS</h3>
-        <Row xs="12" className="box">
+        <div className="row box" xs="12">
           {/*call funciton rendermeals*/}
           {this.renderMeals()}
-        </Row>
+        </div>
 
         {/* Header is not using  */}
         <header className="App-header">
@@ -82,20 +73,20 @@ class DealsMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
-          <Media tag="li">
+          < Media tag="li">
             <Col xs="7">
-              <Media body>
+              <div className="media-body">
                 <Media heading className="dealHeading">
                   <strong>{meal.name}</strong>
                   <br />
                   <strong>RM{meal.price}</strong>
                 </Media>
                 <p className="itemDescription">{meal.description}</p>
-              </Media>
+              </div>
             </Col>
             <Col xs="5">
               <Media right href="#">
-                <Media object className="dealImageSytle" src={meal.image} alt="Generic placeholder image" />
+                <Media object className="itemSytle" src={meal.image} alt="Generic placeholder image" />
               </Media>
             </Col>
           </Media>
