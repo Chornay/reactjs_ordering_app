@@ -17,8 +17,7 @@ import deal_pudding_caramel from '../images/deal_pudding_caramel.png'
 import '../styles/DealScreen.css'
 
 import {
-  Card, CardImg,
-  Row, Col, Media,
+  Media,
 } from 'reactstrap';
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
