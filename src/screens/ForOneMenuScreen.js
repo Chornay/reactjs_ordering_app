@@ -60,7 +60,7 @@ class ForOneMenuScreen extends Component {
     return this.state.data.map(meal => {
       return (
         <div className="col-6 item-meal" style={{ padding: 3 }}>
-          <Link to="/menu/for-one/chicken">
+          <Link to={"/menu/for-one/" + meal.slug}>
             <div className="card">
               <img
                 className="card-img-top img-thumbnail img-fluid"
@@ -70,7 +70,7 @@ class ForOneMenuScreen extends Component {
               />
               <div className="card-body" style={{ height: 50, paddingLeft: 8 }}>
                 <p style={{ fontWeight: "500" }}>
-                  <a href="/menu/for-one/{meal.slug}">{meal.name}</a>
+                  <span>{meal.name}</span>
                 </p>
               </div>
             </div>

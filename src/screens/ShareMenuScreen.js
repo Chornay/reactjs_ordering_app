@@ -15,7 +15,6 @@ class ShaerMenuScreen extends Component {
     this.state = {
       data: [
         { name: 'Family meals', slug: 'familyMeals', image: family_meals },
-        { name: 'ides and Snacks', slug: 'sideSnacks', image: side_snack },
         { name: 'Sides and Snacks', slug: 'sides', image: side_snack },
         { name: 'Deserts', slug: 'deserts', image: desert },
         { name: 'Drinks', slug: 'drinks', image: drink },
@@ -30,17 +29,18 @@ class ShaerMenuScreen extends Component {
 
             <StartMyOrderButton/>
 
-            <div className="row" style={{padding:20}}>
-              <div className="col" xs="12">
+            <div className="row" style={{padding:0}}>
+              <div className="col">
                 <div className="card">
                   <img className="card-img-top" style={{height:150}} src={kfc_promotion} alt="Card image cap" />
                 </div>  
               </div>
             </div>
 
-            <h3 style={{textAlign: 'left', padding:20}}>SHARE</h3>
+            <h3 style={{textAlign: 'left', padding:0,
+          marginTop: 16}}>SHARE</h3>
             
-            <div className="row">
+            <div className="row" style={{ padding: 8 }}>
               {this.renderMeals()}
             </div>
 
@@ -58,7 +58,7 @@ class ShaerMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
-          <div className="col-6 item-meal" style={{ padding: 5 }} >
+          <div className="col-6 item-meal" style={{ padding: 3 }} >
             <Link to="#">
               <div className="card" >
                 <img className="card-img-top img-thumbnail img-fluid" style={{ height: 150, borderRadius: 0, border: 0 }} src={meal.image} alt="cap" />

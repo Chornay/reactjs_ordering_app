@@ -46,7 +46,7 @@ class DealsMenuScreen extends Component {
       <div className="container" style={{ backgroundColor: '#f3f0e2' }}>
         <StartMyOrderButton />
         {/* Promotions */}
-        <div className="row" style={{ padding: 20 }}>
+        <div className="row" style={{ padding: 0 }}>
           <div className="col-12">
             <div className="card">
               <img className="card-img" top style={{ height: 150 }} src={deal_promotions} alt="Card cap" />
@@ -54,15 +54,12 @@ class DealsMenuScreen extends Component {
           </div>
         </div>
 
-        <h3 style={{ textAlign: 'left', padding: 20 }}>DEALS</h3>
+        <h3 style={{ textAlign: 'left', padding: 8 }}>DEALS</h3>
         <div className="col-12 box">
           {/*call funciton rendermeals*/}
           {this.renderMeals()}
         </div>
 
-        {/* Header is not using  */}
-        <header className="App-header">
-        </header>
       </div>
     );
   }
@@ -77,8 +74,8 @@ class DealsMenuScreen extends Component {
               <Media body style={{padding:12}}>
                 <Media heading className="dealHeading">
                   <strong>{meal.name}</strong>
-                  <br />
-                  <strong>RM{meal.price}</strong>
+                  <div style={{height:10}}/>
+                  <span style={{fontWeight:'400'}}>RM{meal.price}</span>
                 </Media>
                 <p className="itemDescription">{meal.description}</p>
               </Media>
