@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 
 import ForOneMenuScreen from "../screens/ForOneMenuScreen";
 import ShareMenuScreen from "../screens/ShareMenuScreen";
@@ -10,26 +10,14 @@ import MenuItemDetailScreen from "../screens/MenuItemDetailScreen";
 import MainNavigation from "../components/MainNavigation";
 
 class MainLayout extends Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
+  
 
   render() {
     return (
       <div style={{ backgroundColor: "#f3f0e2" }}>
-        <MainNavigation toggle={this.toggle} />
+        
 
-        <div className="sub-navigation" style={{ backgroundColor: "white" }}>
+        <div style={{ backgroundColor: "white" }}>
           <div className="container">
             <div
               className="row"
@@ -88,26 +76,8 @@ class MainLayout extends Component {
           <Route path="/menu/deals/" exact component={DealsMenuScreen} />
         </Switch>
 
-        {/* MODAL */}
-        <Modal
-          isOpen={this.state.isOpen}
-          toggle={this.toggle}
-          className={this.props.className}
-        >
-          <ModalBody style={{ padding: 8, margin: 20, display: "flex" }}>
-            <ul style={{ listStyle: "none" }}>
-              <li>
-                <a href="/menu">Menu</a>
-              </li>
-              <li>
-                <a href="/notifications">Notifications</a>
-              </li>
-              <li>
-                <a href="/login">Sign In</a>
-              </li>
-            </ul>
-          </ModalBody>
-        </Modal>
+        
+      
       </div>
     );
   }

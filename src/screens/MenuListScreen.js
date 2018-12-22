@@ -5,13 +5,14 @@ import StartMyOrderButton from '../components/StartMyOrderButton';
 class MenuListScreen extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
 
+        <div className="container">
         <StartMyOrderButton />
 
         <h3 style={{ textAlign: 'left', padding: 20 }}>Chicken Meals</h3>
 
-
+        
         <div className="row">
           <div className="col-12">
             <a href="/menu/item/2-pc-combo">
@@ -23,6 +24,7 @@ class MenuListScreen extends Component {
               </div>
               </a>
           </div>
+        </div>
         </div>
 
       </div>
