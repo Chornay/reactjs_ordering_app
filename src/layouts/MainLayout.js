@@ -10,6 +10,7 @@ import ShareMenuScreen from "../screens/ShareMenuScreen"
 import DealsMenuScreen from "../screens/DealsMenuScreen"
 import MenuListScreen from '../screens/MenuListScreen'
 import MenuItemDetailScreen from '../screens/MenuItemDetailScreen'
+import MainNavigation from "../components/MainNavigation";
 
 class MainLayout extends Component {
   constructor(props) {
@@ -29,21 +30,8 @@ class MainLayout extends Component {
   render() {
     return (
       <div style={{backgroundColor:'#f3f0e2'}}>
-        <nav className="navbar navbar-light bg-light"  color="white">
-          <div className="container">
-            <a className="navbar-brand" onClick={this.toggle} href="#">
-              <span className="navbar-toggler-icon" />
-            </a>
-
-            <nav className="ml-auto" >
-              <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="/login/">Sign In</a>
-              </li>
-              </ul>
-            </nav>
-          </div>
-        </nav>
+        
+        <MainNavigation toggle={this.toggle}/>
 
         <div className="sub-navigation" style={{backgroundColor:'white'}}>        
             <div className="container">
@@ -70,33 +58,31 @@ class MainLayout extends Component {
             </div>          
         </div>
 
-        {/* The Screens  */}
+        {/* The Menu Contents  */}
         <Switch>
           <Route path="/menu/" exact component={ForOneMenuScreen} />          
           <Route path="/menu/for-one" exact component={ForOneMenuScreen} />
           <Route path="/menu/for-one/chicken" exact component={MenuListScreen} />
-          <Route path="/menu/item/2-pc-combo" exact component={MenuItemDetailScreen} />
+          <Route path="/menu/item/:slug" exact component={MenuItemDetailScreen} />
           <Route path="/menu/share/" exact component={ShareMenuScreen} />
           <Route path="/menu/deals/" exact component={DealsMenuScreen} />
           </Switch>
+        
+        {/* MODAL */}
         <Modal
           isOpen={this.state.isOpen}
           toggle={this.toggle}
           className={this.props.className}
-          // style={{padding:0, margin:0, borderRadius:0}}
-        >
-          <ModalHeader toggle={this.toggle}>Menu</ModalHeader>
-          <ModalBody>            
-            <ul>
-                <li><a>Menu</a></li>
-                <li><a>Notifications</a></li>
-                <li><a>Menu</a></li>
-            </ul>                       
 
+        >
+          <ModalBody style={{padding:8, margin:20, display:'flex'}}>            
+            <ul style={{listStyle:'none'}}>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/notifications">Notifications</a></li>
+                <li><a href="/login">Sign In</a></li>
+            </ul>                       
           </ModalBody>
-          <ModalFooter>           
-            
-          </ModalFooter>
+
         </Modal>
       </div>
     );
