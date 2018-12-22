@@ -27,3 +27,19 @@ h2{
   cursor: pointer;
 }
 
+.Menu {
+  font-size:17px;
+  color:black;
+  padding: 10px;  
+  font-weight: 100;
+  /* text-transform: uppercase;   */
+}
+
+.Menu-Selected {
+  font-size:17px;
+  color:black;
+  padding: 10px;  
+  font-weight: 700;
+  text-transform: uppercase;
+}
+

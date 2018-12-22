@@ -54,7 +54,7 @@ class DealsMenuScreen extends Component {
           </div>
         </div>
 
-        <h3 style={{ textAlign: 'left', padding: 8 }}>DEALS</h3>
+        <h3 style={{ textAlign: 'left', padding:0, marginTop: 16 }}>DEALS</h3>
         <div className="col-12 box">
           {/*call funciton rendermeals*/}
           {this.renderMeals()}
