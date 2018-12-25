@@ -11,7 +11,7 @@ import StartMyOrderButton from "../components/StartMyOrderButton";
 import AutoFitImage from 'react-image-autofit-frame';
 
 
-const allowedSrcWidths = [ 200, 300, 400, 500 ];
+const allowedSrcWidths = [200, 300, 400, 500];
 
 class ForOneMenuScreen extends Component {
   constructor(props) {
@@ -35,26 +35,26 @@ class ForOneMenuScreen extends Component {
           <StartMyOrderButton />
 
           {/* Header */}
-          <div className="row" style={{ padding:0}}>
-            <div className="col" style={{}}>              
-              <img                
-                style={{ width: '100%'}}
+          <div className="row" style={{ padding: 0 }}>
+            <div className="col" style={{}}>
+              <img
+                style={{ width: '100%' }}
                 src={require('../images/spicy-gochujang-sst.jpg')}
                 alt="Hojang"
-              />             
-              
+              />
+
             </div>
-            
+
           </div>
 
           {/* Title */}
-          <h3 style={{ textAlign: "left", padding:0, marginTop: 16 }}>MEALS FOR ONE</h3>
+          <h3 style={{ textAlign: "left", padding: 0, marginTop: 16 }}>MEALS FOR ONE</h3>
 
           {/* Contents */}
-          <div className="row" style={{padding:8}}>
+          <div className="row" style={{ padding: 8 }}>
             {this.renderMeals()}
           </div>
-        
+
         </div>
       </div>
     );
@@ -66,14 +66,16 @@ class ForOneMenuScreen extends Component {
         <div className="col-6 item-meal" style={{ padding: 3 }}>
           <Link to={"/menu/for-one/" + meal.slug}>
             <div className="card">
-              <img
-                className="card-img-top img-thumbnail img-fluid"
-                style={{ height: 150, borderRadius: 0, border: 0 }}
-                src={meal.image}
-                alt="cap"
-              />
-              <div className="card-body" style={{ height: 50, paddingLeft: 8 }}>
-                <p style={{ fontWeight: "500" }}>
+              <div className="thumbnail" style={{height:200, overflow:'hidden'}}>
+                <img
+                  className=""
+                  style={{ width: '100%', borderRadius: 0, border: 0 }}
+                  src={meal.image}
+                  alt="cap"
+                />
+              </div>
+              <div className="card-body" style={{ height: 50, paddingLeft: 8}}>
+                <p style={{ fontWeight: '800', fontSize:20 }}>
                   <span>{meal.name}</span>
                 </p>
               </div>
