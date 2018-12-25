@@ -8,6 +8,10 @@ import side_snack from "../images/side_snack.jpg";
 import desert from "../images/desert.jpg";
 import drink from "../images/drink.jpeg";
 import StartMyOrderButton from "../components/StartMyOrderButton";
+import AutoFitImage from 'react-image-autofit-frame';
+
+
+const allowedSrcWidths = [ 200, 300, 400, 500 ];
 
 class ForOneMenuScreen extends Component {
   constructor(props) {
@@ -31,16 +35,16 @@ class ForOneMenuScreen extends Component {
           <StartMyOrderButton />
 
           {/* Header */}
-          <div className="row" style={{ padding:0 }}>
-            <div className="col">
-              <img
-                className="card-img"
-                top
-                style={{ height: 150 }}
-                src={kfc_promotion}
-                alt="Card cap"
-              />
+          <div className="row" style={{ padding:0}}>
+            <div className="col" style={{}}>              
+              <img                
+                style={{ width: '100%'}}
+                src={require('../images/spicy-gochujang-sst.jpg')}
+                alt="Hojang"
+              />             
+              
             </div>
+            
           </div>
 
           {/* Title */}

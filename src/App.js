@@ -31,14 +31,12 @@ class App extends Component {
     return (
       <BrowserRouter>
       <div>
-        <MainNavigation toggle={this.toggle} />
-      
-        <Switch>  
-
+        <MainNavigation toggle={this.toggle} />      
+        <Switch> 
           <Route path="/menu" component={MainLayout} />
           <Route path="/login" component={SignInScreen} /> 
           <Route path="/notifications" component={NotificationMainScreen} />        
-          <Redirect from="/" exact to="/menu" />
+          <Redirect from="/" exact to="/menu/for-one" />
           {/* <Route path="/" component={MenuItemDetailScreen} /> */}
           <Route component={NoMatchScreen}/>
         </Switch>
