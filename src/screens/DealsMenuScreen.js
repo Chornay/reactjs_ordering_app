@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 import deal_promotions from '../images/deal_promotions.png'
 
 import deal_spicy_gochujang_3pc from '../images/deal_spicy_gochujang_3pc.png'
@@ -16,16 +15,13 @@ import deal_pudding_caramel from '../images/deal_pudding_caramel.png'
 
 import '../styles/DealScreen.css'
 
-import {
-  Media,
-} from 'reactstrap';
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class DealsMenuScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data:[
+      data: [
         { name: 'Spicy Honey Gocujang Sauce', price: 2.45, description: '2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos', image: require('../images/deal_spicy_gochujang_3pc.png') },
         { name: 'Spicy Gochujang Crunch 3-pc Combo', price: 23.20, description: '3 pieces of chicken, Spicy Honey Gochujang sauce, coleslaw, whipped potato, drink., coleslaw, whipped potatos', image: deal_spicy_gochujang_3pc },
         { name: 'spicy Honey Gochujang Sauce', price: 2.45, description: '', image: deal_spicy_gochujang_3pc },
@@ -49,12 +45,12 @@ class DealsMenuScreen extends Component {
         <div className="row" style={{ padding: 0 }}>
           <div className="col-12">
             <div className="card">
-              <img className="card-img" top style={{ height: 150 }} src={deal_promotions} alt="Card cap" />
+              <img className="card-img" top style={{ height: '100%', maxHeight:400 }} src={deal_promotions} alt="Card cap" />
             </div>
           </div>
         </div>
 
-        <h3 style={{ textAlign: 'left', padding:0, marginTop: 16 }}>DEALS</h3>
+        <h3 style={{ textAlign: 'left', padding: 0, marginTop: 16 }}>DEALS</h3>
         <div className="col-12 box">
           {/*call funciton rendermeals*/}
           {this.renderMeals()}
@@ -69,23 +65,24 @@ class DealsMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
-          <Media tag="li" style={{marginBottom:10, backgroundColor:'white'}}>
-            
-              <Media body style={{padding:12}}>
-                <Media heading className="dealHeading">
-                  <strong>{meal.name}</strong>
-                  <div style={{height:10}}/>
-                  <span style={{fontWeight:'400'}}>RM{meal.price}</span>
-                </Media>
-                <p className="itemDescription">{meal.description}</p>
-              </Media>
-            
-            <div className="col-5">
-              <Media right href="#">
-                <Media object className="itemSytle" src={meal.image} alt="Generic placeholder" />
-              </Media>
+          <div className="media" tag="li" style={{ marginBottom: 10, backgroundColor: 'white' }}>
+
+            <div className="media-body" style={{ padding: 12 }}>
+              <div heading className="dealHeading">
+                <strong>{meal.name}</strong>
+                <div style={{ height: 10 }} />
+                <span style={{ fontWeight: '400' }}>RM{meal.price}</span>
+              </div>
+              <p className="itemDescription">{meal.description}</p>
             </div>
-          </Media>
+
+            <div className="col-5">
+              <div className="media" right href="#">
+                <img object className="itemSytle" src={meal.image} alt="Generic placeholder" />
+              </div>
+            </div>
+
+          </div>
 
         )
       })
