@@ -27,32 +27,34 @@ class ShaerMenuScreen extends Component {
       <div>
         <div className="container">
 
-            <StartMyOrderButton/>
+          <StartMyOrderButton />
 
-            <div className="row" style={{padding:0}}>
-              <div className="col">
-                <div className="card">
-                  <img className="card-img-top" style={{height:150}} src={kfc_promotion} alt="Card image cap" />
-                </div>  
+          <div className="row" style={{ padding: 0 }}>
+            <div className="col">
+              <div className="card">
+                <img style={{ width: '100%', maxHeight: 300 }} src={kfc_promotion} alt="Card cap" />
               </div>
             </div>
+          </div>
 
-            <h3 style={{textAlign: 'left', padding:0,
-          marginTop: 16}}>SHARE</h3>
-            
-            <div className="row" style={{ padding: 8 }}>
-              {this.renderMeals()}
-            </div>
+          <h3 style={{
+            textAlign: 'left', padding: 0,
+            marginTop: 16
+          }}>SHARE</h3>
 
-            <header className="App-header">
-            </header>
-     
+          <div className="row" style={{ padding: 8 }}>
+            {this.renderMeals()}
+          </div>
+
+          <header className="App-header">
+          </header>
+
         </div>
 
       </div>
     );
   }
-  
+
   renderMeals() {
     return (
 
@@ -61,7 +63,9 @@ class ShaerMenuScreen extends Component {
           <div className="col-6 item-meal" style={{ padding: 3 }} >
             <Link to="#">
               <div className="card" >
-                <img className="card-img-top img-thumbnail img-fluid" style={{ height: 150, borderRadius: 0, border: 0 }} src={meal.image} alt="cap" />
+                <div className="thumbnail" style={{ height: 200, overflow: 'hidden' }}>
+                  <img className="card-img-top img-thumbnail img-fluid" style={{ width: '100%', borderRadius: 0, border: 0 }} src={meal.image} alt="cap" />
+                </div>
                 <div className='card-body' style={{ height: 50, paddingLeft: 8 }}>
                   <p style={{ fontWeight: '500' }}><a href="/menu/for-one/chicken">{meal.name}</a></p>
                 </div>

@@ -82,7 +82,7 @@ class DealsMenuScreen extends Component {
             
             <div className="col-5">
               <Media right href="#">
-                <Media object className="itemSytle" src={meal.image} alt="Generic placeholder image" />
+                <Media object className="itemSytle" src={meal.image} alt="Generic placeholder" />
               </Media>
             </div>
           </Media>
