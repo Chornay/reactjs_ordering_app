@@ -21,7 +21,9 @@ class MenuItemDetailScreen extends Component {
       isDecreaseOriginalChickenDisabled: false,
       isIncreaseOriginalChickenDisabled: false,
       isDecreaseSpicyChickenDisabled: false,
-      isIncreaseSpicyChickenDisabled: false
+      isIncreaseSpicyChickenDisabled: false,
+      selected_type: 'food'
+
     };
 
     // we will request the detail of them menu 
@@ -126,12 +128,57 @@ class MenuItemDetailScreen extends Component {
 
             <nav aria-label="Page navigation example">
               <ul className="pagination justify-content-center">
-                <li className="page-item active"><a className="page-link" href="#">Food</a></li>
-                <li className="page-item"><a className="page-link" href="#">Drink</a></li>
+                <li className={"page-item " +  (this.state.selected_type === "food" ? "active" : "") } onClick={()=>{ this.setState({selected_type:'food'}) }} ><a className="page-link" >Food</a></li>
+                <li className={"page-item " +  (this.state.selected_type === "drink" ? "active" : "") } onClick={()=>{ this.setState({selected_type:'drink'}) }} ><a className="page-link">Drink</a></li>
               </ul>
             </nav>
 
-            <h1 style={{ fontSize: 18, fontWeight: '700' }}>Chicken Meal</h1>
+            {this.renderFoodOrDrink()}
+
+            <h3>In your meal:</h3>
+
+            <ul>
+              {this.state.chicken_ori > 0 ? (
+                <li>{this.state.chicken_ori} Original Recipe Chicken</li>
+              ) : null}
+              {this.state.chicken_spicy > 0 ? (
+                <li>{this.state.chicken_spicy} Spicy Recipe Chicken</li>
+              ) : null}
+              <li>1 Coeslaw (R)</li>
+              <li>1 Whipped Potato</li>
+              <li>1 Pepsi Black</li>
+
+            </ul>
+
+            {/* Total */}
+            <div style={{ width: '100%', backgroundColor: 'black', height: 1, marginBottom: 10 }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Total</span>
+              <span>RM 16.90</span>
+            </div>
+            <div style={{ width: '100%', backgroundColor: 'black', height: 1, marginTop: 10 }} />
+
+            <FluidButton title="ADD TO ORDER" />
+
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderFoodOrDrink(){
+
+    if (this.state.selected_type == 'food'){
+      return this.renderFood();
+    }else if(this.state.selected_type == 'drink') {
+      return this.renderDrink();
+    }
+
+  }
+
+  renderFood(){
+    return(
+      <div>
 
             <p>Choose Your Chicken</p>
 
@@ -196,37 +243,83 @@ class MenuItemDetailScreen extends Component {
                 </div>
               </div>
             </div>
-
-            <h3>In your meal:</h3>
-
-            <ul>
-              {this.state.chicken_ori > 0 ? (
-                <li>{this.state.chicken_ori} Original Recipe Chicken</li>
-              ) : null}
-              {this.state.chicken_spicy > 0 ? (
-                <li>{this.state.chicken_spicy} Spicy Recipe Chicken</li>
-              ) : null}
-              <li>1 Coeslaw (R)</li>
-              <li>1 Whipped Potato</li>
-              <li>1 Pepsi Black</li>
-
-            </ul>
-
-            {/* Total */}
-            <div style={{ width: '100%', backgroundColor: 'black', height: 1, marginBottom: 10 }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>Total</span>
-              <span>RM 16.90</span>
-            </div>
-            <div style={{ width: '100%', backgroundColor: 'black', height: 1, marginTop: 10 }} />
-
-            <FluidButton title="ADD TO ORDER" />
-
-          </div>
-        </div>
       </div>
-    );
+    )
   }
+
+
+  renderDrink(){
+    return(
+      <div>
+
+        <p>Choose your drink:</p>
+
+
+            <div style={{ backgroundColor: 'white', padding: 8, marginBottom: 8 }}>
+              <div className="row">
+                <div className="col-8">
+                  <h4>Pepsi </h4>
+                  <button type="button" class="btn btn-primary"
+                    disabled={this.state.isDecreaseOriginalChickenDisabled}
+                    onClick={this.decreaseOriginalChicken}
+                    style={{ backgroundColor: "red" }}
+                  >
+                    -
+                </button>
+                  <span style={{ padding: 18 }}>{this.state.chicken_ori}</span>
+                  <button
+                    type="button" class="btn btn-primary"
+                    disabled={this.state.isIncreaseOriginalChickenDisabled}
+                    onClick={this.increaseOriginalChicken}
+                    style={{ backgroundColor: "red" }}
+                  >
+                    +
+                </button>
+                </div>
+
+                <div className="col-4">
+                  <div className="media" right >
+                    <img object className="itemSytle" src={require('../images/delivery_Pepsi(R).png')} style={{width:'100%'}} />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div style={{ backgroundColor: 'white', padding: 8, marginBottom: 8 }}>
+            <div className="row">
+              <div className="col-8">
+              <h4>Montain Dew</h4>
+              <button
+                type="button" class="btn btn-primary"
+                disabled={this.state.isDecreaseSpicyChickenDisabled}
+                onClick={this.decreaseSpicyChicken}
+                style={{ backgroundColor: "red" }}
+              >
+                -
+              </button>
+              <span style={{ padding: 18 }}>{this.state.chicken_spicy}</span>
+              <button
+                type="button" class="btn btn-primary"
+                disabled={this.state.isIncreaseSpicyChickenDisabled}
+                onClick={this.increaseSpicyChicken}
+                style={{ backgroundColor: "red" }}
+              >
+                +
+              </button>
+              </div>
+
+              <div className="col-4">
+                  <div className="media" right >
+                    <img object className="itemSytle" src={require('../images/delivery_Pepsi(R).png')} style={{width:'100%'}} />
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    )
+  }
+
 }
 
 export default MenuItemDetailScreen;
