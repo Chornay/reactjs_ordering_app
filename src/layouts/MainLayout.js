@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Route, Link, Switch, withRouter } from "react-router-dom";
 
+import { connect } from 'react-redux'
+import * as types from '../redux/types'
+
 import ForOneMenuScreen from "../screens/ForOneMenuScreen";
 import ShareMenuScreen from "../screens/ShareMenuScreen";
 import DealsMenuScreen from "../screens/DealsMenuScreen";
 import MenuListScreen from "../screens/MenuListScreen";
 import MenuItemDetailScreen from "../screens/MenuItemDetailScreen";
 import MainNavigation from "../components/MainNavigation";
+
 
 
 class MainLayout extends Component {
@@ -57,7 +61,9 @@ class MainLayout extends Component {
                   paddingRight: 8
                 }}
               >
-                <span style={{ marginRight: 16 }}>0</span>
+                <span style={{ marginRight: 16 }}>
+                  {this.props.counter}
+                </span>
                 <span style={{ textAlign: "right", fontWeight: "700" }}>
                   RM 10.00
                 </span>
@@ -88,4 +94,18 @@ class MainLayout extends Component {
   }
 }
 
-export default withRouter(MainLayout);
+
+function mapStateToProps(state){
+  return {
+    counter: state.counter
+  }
+}
+
+function mapsDispatchToProps(dispatch){
+  return {
+    increaseCounter: ()=> dispatch({type: types.INCREASE_COUNTER}),
+    decreaseCounter: ()=> dispatch({type: types.DECREASE_COUNTER}),    
+  }
+}
+
+export default connect(mapStateToProps,mapsDispatchToProps)(withRouter(MainLayout));

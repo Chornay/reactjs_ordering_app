@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AutoFitImage from 'react-image-autofit-frame';
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
+import { connect } from 'react-redux';
+
 import '../styles/DealScreen.css'
 
 import deal_promotions from '../images/deal_promotions.png'
@@ -66,6 +68,7 @@ class DealsMenuScreen extends Component {
       this.state.data.map((meal) => {
         return (
           <div className="media" tag="li" style={{ marginBottom: 10, backgroundColor: 'white' }}>
+          
             <div className="media-body" style={{ padding: 8 }}>
               <div heading className="dealHeading">
                 <h1 style={{ fontWeight: '900' }}>{meal.name}</h1>
@@ -91,4 +94,4 @@ class DealsMenuScreen extends Component {
 
 
 
-export default DealsMenuScreen;
+export default connect()(DealsMenuScreen);

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch, Redirect} from 'react-router-dom'
 
+// REDUX
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import * as types from './redux/types'
+
 import MainLayout from './layouts/MainLayout'
 import MenuItemDetailScreen from './screens/MenuItemDetailScreen'
 import SignInScreen from './screens/SignInScreen'
@@ -11,27 +16,48 @@ import MainNavigation from './components/MainNavigation';
 
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
+const initialState = {
+  counter: 0
+}
+
+const reducer = (state = initialState, action) => {
+
+  switch (action.type) {
+
+    case types.INCREASE_COUNTER:
+      return { ...state, counter : state.counter + 1}
+    case types.DECREASE_COUNTER:
+      return { ...state, counter : state.counter - 1}
+  }
+  return state;
+
+}
+
+const store = createStore(reducer);
+
 class App extends Component {
 
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
   }
+  
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
 
+  
   render() {
     return (
+      <Provider store={store}>
       <BrowserRouter>
       <div>
-        <MainNavigation toggle={this.toggle} />      
+        <MainNavigation toggle={()=>{this.toggle()}} />      
         <Switch> 
           <Route path="/menu" component={MainLayout} />
           <Route path="/login" component={SignInScreen} /> 
@@ -63,6 +89,7 @@ class App extends Component {
         </Modal>
         </div>
       </BrowserRouter>
+      </Provider>
     );
   }
 }

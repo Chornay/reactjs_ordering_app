@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { connect } from 'react-redux';
+
 import kfc_promotion from "../images/kfc_promotion.jpg";
 import chicken_meal from "../images/chicken_meal.jpeg";
 import buger_meals from "../images/buger_meals.jpg";
@@ -38,6 +40,7 @@ class ForOneMenuScreen extends Component {
           <div className="row" style={{ padding: 0 }}>
             <div className="col" style={{}}>
               <img
+                onClick={()=>{this.props.increaseCounter()}}
                 style={{ width: '100%' }}
                 src={require('../images/spicy-gochujang-sst.jpg')}
                 alt="Hojang"
@@ -87,4 +90,11 @@ class ForOneMenuScreen extends Component {
   }
 }
 
-export default ForOneMenuScreen;
+function mapsDispatchToProps(dispatch){
+  return {
+    increaseCounter: () => dispatch({type:'INCREASE_COUNTER'}),
+    decreaseCounter: () => dispatch({type:'DECREASE_COUNTER'})
+  }
+}
+
+export default connect(null,mapsDispatchToProps)(ForOneMenuScreen);;
