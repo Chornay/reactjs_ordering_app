@@ -158,7 +158,7 @@ class MenuItemDetailScreen extends Component {
             </div>
             <div style={{ width: '100%', backgroundColor: 'black', height: 1, marginTop: 10 }} />
 
-            <FluidButton title="ADD TO ORDER" />
+            <FluidButton title="ADD TO ORDER" onClick={()=>{ this.props.history.push('/delivery/cart') }} />
 
           </div>
         </div>

@@ -15,6 +15,7 @@ import NotificationMainScreen from './screens/NotificationsMainScreen';
 import MainNavigation from './components/MainNavigation';
 
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import OrderDetailsScreen from './screens/OrderDetailsScreen';
 
 const initialState = {
   counter: 0
@@ -59,8 +60,11 @@ class App extends Component {
       <div>
         <MainNavigation toggle={()=>{this.toggle()}} />      
         <Switch> 
+          <Route path="/login" component={SignInScreen} />
           <Route path="/menu" component={MainLayout} />
-          <Route path="/login" component={SignInScreen} /> 
+
+          <Route path="/delivery/cart" component={OrderDetailsScreen} />
+           
           <Route path="/notifications" component={NotificationMainScreen} />        
           <Redirect from="/" exact to="/menu/for-one" />
           {/* <Route path="/" component={MenuItemDetailScreen} /> */}
