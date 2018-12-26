@@ -22,8 +22,8 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
+  // eslint-disable-next-line default-case
   switch (action.type) {
-
     case types.INCREASE_COUNTER:
       return { ...state, counter : state.counter + 1}
     case types.DECREASE_COUNTER:
@@ -44,7 +44,7 @@ class App extends Component {
       isOpen: false
     };
   }
-  
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -70,7 +70,7 @@ class App extends Component {
         {/* MODAL */}
         <Modal
           isOpen={this.state.isOpen}
-          toggle={this.toggle}
+          toggle={()=>{this.toggle()}}
           className={this.props.className}
         >
           <ModalBody style={{ padding: 8, margin: 20, display: "flex" }}>

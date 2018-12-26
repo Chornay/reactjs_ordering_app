@@ -79,9 +79,9 @@ class DealsMenuScreen extends Component {
             </div>
 
             <div className="col-6">
-              <div className="media" right href="#">
-                <img object className="itemSytle" src={meal.image} alt="Generic placeholder" style={{width:'100%'}} />
-              </div>
+
+                <img object className="itemSytle" src={meal.image} alt="Generic placeholder" style={{height:'100%',width:'100%'}} />
+
             </div>
 
           </div>
