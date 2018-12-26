@@ -27,10 +27,7 @@
 }
 /* not using in js dealScreen file */
 .itemSytle {
-  position: relative;
   padding: 8px;
-  width: 110%;
-  height: 180px;
   /* border: solid red; */
 }
 .dealHeading {

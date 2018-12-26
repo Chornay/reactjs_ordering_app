@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import AutoFitImage from 'react-image-autofit-frame';
+import StartMyOrderButton from '../components/StartMyOrderButton';
+
+import '../styles/DealScreen.css'
 
 import deal_promotions from '../images/deal_promotions.png'
-
 import deal_spicy_gochujang_3pc from '../images/deal_spicy_gochujang_3pc.png'
 import deal_spicy_gochujang_sauce from '../images/deal_spicy_gochujang_sauce.png'
 import deal_spicy_prawn from '../images/deal_spicy_prawn.png'
@@ -13,9 +16,6 @@ import deal_pudding_mango from '../images/deal_pudding_mango.png'
 import deal_pudding_gulamelaka from '../images/deal_pudding_gulamelaka.png'
 import deal_pudding_caramel from '../images/deal_pudding_caramel.png'
 
-import '../styles/DealScreen.css'
-
-import StartMyOrderButton from '../components/StartMyOrderButton';
 
 class DealsMenuScreen extends Component {
   constructor(props) {
@@ -66,19 +66,18 @@ class DealsMenuScreen extends Component {
       this.state.data.map((meal) => {
         return (
           <div className="media" tag="li" style={{ marginBottom: 10, backgroundColor: 'white' }}>
-
-            <div className="media-body" style={{ padding: 12 }}>
+            <div className="media-body" style={{ padding: 8 }}>
               <div heading className="dealHeading">
-                <strong>{meal.name}</strong>
-                <div style={{ height: 10 }} />
-                <span style={{ fontWeight: '400' }}>RM{meal.price}</span>
+                <h1 style={{ fontWeight: '900' }}>{meal.name}</h1>
+                <div style={{ marginTop:-10 }} />
+                <h2 style={{ fontWeight: '500' }}>RM{meal.price}</h2>
               </div>
               <p className="itemDescription">{meal.description}</p>
             </div>
 
-            <div className="col-5">
+            <div className="col-6">
               <div className="media" right href="#">
-                <img object className="itemSytle" src={meal.image} alt="Generic placeholder" />
+                <img object className="itemSytle" src={meal.image} alt="Generic placeholder" style={{width:'100%'}} />
               </div>
             </div>
 
