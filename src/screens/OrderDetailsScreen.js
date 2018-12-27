@@ -9,7 +9,8 @@ class OrderDetailsScreen extends Component {
       <div className="container">
 
         <p>Delivery in:</p>
-        <span>30 mins</span>
+
+        <strong>2018-12-29 12:00 pm</strong>
 
         <div style={{ width: '100%', backgroundColor: 'black', height: 1, marginTop: 10 }} />        
 
