@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Assistant');
+@import url('https://fonts.googleapis.com/css?family=Assistant:400,700');
 
 
 body{
@@ -55,3 +55,10 @@ img {
   text-transform: uppercase;
 }
 
+/* Pricing */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.big-price{
+  font-family: 'Oswald';
+}

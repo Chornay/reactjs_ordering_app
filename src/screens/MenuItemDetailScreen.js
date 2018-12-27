@@ -264,6 +264,11 @@ class MenuItemDetailScreen extends Component {
             <div style={{ backgroundColor: 'white', padding: 8, marginBottom: 8 }}>
               <div className="row">
                 <div className="col-8">
+
+                  {this.state.chicken_ori > 0 ? (
+                  <span>In your meal </span>
+                ) : null}
+
                   <h4>Chicken Original</h4>
                   <button type="button" class="btn btn-primary"
                     disabled={this.state.isDecreaseOriginalChickenDisabled}
@@ -295,6 +300,9 @@ class MenuItemDetailScreen extends Component {
             <div style={{ backgroundColor: 'white', padding: 8, marginBottom: 8 }}>
             <div className="row">
               <div className="col-8">
+              {this.state.chicken_spicy > 0 ? (
+                  <span>In your meal </span>
+                ) : null}
               <h4>Chicken Spicy</h4>
               <button
                 type="button" class="btn btn-primary"

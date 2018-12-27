@@ -17,6 +17,7 @@ import MainNavigation from './components/MainNavigation';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import OrderDetailsScreen from './screens/OrderDetailsScreen';
 import CheckDeliveryCoverageScreen from './screens/CheckDeliveryCoverageScreen';
+import CheckoutScreen from './screens/CheckoutScreen';
 
 const initialState = {
   counter: 0
@@ -66,8 +67,9 @@ class App extends Component {
 
           <Route path="/delivery/cart" component={OrderDetailsScreen} />
 
-          <Route path="delivery/check-location" component={CheckDeliveryCoverageScreen} />
+          <Route path="/delivery/check-location" component={CheckDeliveryCoverageScreen} />
 
+          <Route path="/delivery/checkout" component={CheckoutScreen}/>
           
            
           <Route path="/notifications" component={NotificationMainScreen} />        
