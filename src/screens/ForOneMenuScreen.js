@@ -66,7 +66,7 @@ class ForOneMenuScreen extends Component {
   renderMeals() {
     return this.state.data.map(meal => {
       return (
-        <div className="col-6 item-meal" style={{ padding: 3 }}>
+        <div className="col-6 item-meal" style={{ padding: 3 }} key={meal.slug}>
           <Link to={"/menu/for-one/" + meal.slug}>
             <div className="card">
               <div className="thumbnail" style={{height:200, overflow:'hidden'}}>
