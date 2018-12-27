@@ -16,6 +16,7 @@ import MainNavigation from './components/MainNavigation';
 
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import OrderDetailsScreen from './screens/OrderDetailsScreen';
+import CheckDeliveryCoverageScreen from './screens/CheckDeliveryCoverageScreen';
 
 const initialState = {
   counter: 0
@@ -64,6 +65,10 @@ class App extends Component {
           <Route path="/menu" component={MainLayout} />
 
           <Route path="/delivery/cart" component={OrderDetailsScreen} />
+
+          <Route path="delivery/check-location" component={CheckDeliveryCoverageScreen} />
+
+          
            
           <Route path="/notifications" component={NotificationMainScreen} />        
           <Redirect from="/" exact to="/menu/for-one" />

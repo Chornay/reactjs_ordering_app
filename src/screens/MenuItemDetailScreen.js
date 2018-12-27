@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 
-import kfc_promotion from "../images/kfc_promotion.jpg";
+
 import chicken_meal from "../images/chicken_meal.jpeg";
 
-import buger_meals from "../images/buger_meals.jpg";
-import side_snack from "../images/side_snack.jpg";
-import desert from "../images/desert.jpg";
-import drink from "../images/drink.jpeg";
-import StartMyOrderButton from "../components/StartMyOrderButton";
 import FluidButton from "../components/FluidButton";
 
 class MenuItemDetailScreen extends Component {
@@ -22,7 +17,14 @@ class MenuItemDetailScreen extends Component {
       isIncreaseOriginalChickenDisabled: false,
       isDecreaseSpicyChickenDisabled: false,
       isIncreaseSpicyChickenDisabled: false,
-      selected_type: 'food'
+      selected_type: 'food',
+      drink_total:1,
+      drink_1:1,
+      drink_2:0,
+      isDecreaseDrink1Disabled: false,
+      isIncreaseDrink1Disabled: false,
+      isDecreaseDrink2Disabled: false,
+      isIncreaseDrink2Disabled: false,
 
     };
 
@@ -80,6 +82,50 @@ class MenuItemDetailScreen extends Component {
         isIncreaseSpicyChickenDisabled: false
       });
     }
+
+    // For Drinks
+    
+    if (this.state.drink_1 <= 0) {
+      this.setState({
+        isDecreaseDrink1Disabled: true
+      });
+    } else {
+      this.setState({
+        isDecreaseDrink1Disabled: false
+      });
+    }
+
+    if (this.state.drink_1 >= this.state.drink_total) {
+      this.setState({
+        isIncreaseDrink1Disabled: true
+      });
+    } else {
+      this.setState({
+        isIncreaseDrink1Disabled: false
+      });
+    }
+
+    // For Spicy
+    if (this.state.drink_2 <= 0) {
+      this.setState({
+        isDecreaseDrink2Disabled: true
+      });
+    } else {
+      this.setState({
+        isDecreaseDrink2Disabled: false
+      });
+    }
+
+    if (this.state.drink_2 >= this.state.drink_total) {
+      this.setState({
+        isIncreaseDrink2Disabled: true
+      });
+    } else {
+      this.setState({
+        isIncreaseDrink2Disabled: false
+      });
+    }
+
   };
 
   // Changes
@@ -109,6 +155,34 @@ class MenuItemDetailScreen extends Component {
     this.state.chicken_ori = this.state.chicken_ori + 1;
     this.updateDisablingButton();
   };
+
+  // Drinks
+  increaseDrink1 = () => {
+    this.state.drink_1 = this.state.drink_1 + 1;
+    this.state.drink_2 = this.state.drink_2 - 1;
+
+    this.updateDisablingButton();
+  };
+
+  decreaseDrink1 = () => {
+    this.state.drink_1 = this.state.drink_1 - 1;
+    this.state.drink_2 = this.state.drink_2 + 1;
+
+    this.updateDisablingButton();
+  };
+
+  increaseDrink2 = () => {
+    this.state.drink_2 = this.state.drink_2 + 1;
+    this.state.drink_1 = this.state.drink_1 - 1;
+    this.updateDisablingButton();
+  };
+
+  decreaseDrink2 = () => {
+    this.state.drink_2 = this.state.drink_2 - 1;
+    this.state.drink_1 = this.state.drink_1 + 1;
+    this.updateDisablingButton();
+  };
+
 
   render() {
     return (
@@ -146,7 +220,13 @@ class MenuItemDetailScreen extends Component {
               ) : null}
               <li>1 Coeslaw (R)</li>
               <li>1 Whipped Potato</li>
-              <li>1 Pepsi Black</li>
+              
+              {this.state.drink_1 > 0 ? (
+                <li>{this.state.drink_1} Pepsi</li>
+              ) : null}
+              {this.state.drink_2 > 0 ? (
+                <li>{this.state.drink_2} Mountain Dew</li>
+              ) : null}
 
             </ul>
 
@@ -168,9 +248,9 @@ class MenuItemDetailScreen extends Component {
 
   renderFoodOrDrink(){
 
-    if (this.state.selected_type == 'food'){
+    if (this.state.selected_type === 'food'){
       return this.renderFood();
-    }else if(this.state.selected_type == 'drink') {
+    }else if(this.state.selected_type === 'drink') {
       return this.renderDrink();
     }
 
@@ -179,7 +259,6 @@ class MenuItemDetailScreen extends Component {
   renderFood(){
     return(
       <div>
-
             <p>Choose Your Chicken</p>
 
             <div style={{ backgroundColor: 'white', padding: 8, marginBottom: 8 }}>
@@ -205,8 +284,8 @@ class MenuItemDetailScreen extends Component {
                 </div>
 
                 <div className="col-4">
-                  <div className="media" right >
-                    <img object className="itemSytle" src={require('../images/chicken-original.png')} style={{width:'100%'}} />
+                  <div className="media-right"  >
+                    <img object className="itemSytle" src={require('../images/chicken-original.png')} alt="hi" style={{width:'100%'}} />
                   </div>
                 </div>
               </div>
@@ -237,8 +316,8 @@ class MenuItemDetailScreen extends Component {
               </div>
 
               <div className="col-4">
-                  <div className="media" right >
-                    <img object className="itemSytle" src={require('../images/chicken-hot-spicy.png')} style={{width:'100%'}} />
+                  <div className="media-right" >
+                    <img object className="itemSytle" src={require('../images/chicken-hot-spicy.png')} style={{width:'100%'}} alt="item" />
                   </div>
                 </div>
               </div>
@@ -260,17 +339,17 @@ class MenuItemDetailScreen extends Component {
                 <div className="col-8">
                   <h4>Pepsi </h4>
                   <button type="button" class="btn btn-primary"
-                    disabled={this.state.isDecreaseOriginalChickenDisabled}
-                    onClick={this.decreaseOriginalChicken}
+                    disabled={this.state.isDecreaseDrink1Disabled}
+                    onClick={this.decreaseDrink1}
                     style={{ backgroundColor: "red" }}
                   >
                     -
                 </button>
-                  <span style={{ padding: 18 }}>{this.state.chicken_ori}</span>
+                  <span style={{ padding: 18 }}>{this.state.drink_1}</span>
                   <button
                     type="button" class="btn btn-primary"
-                    disabled={this.state.isIncreaseOriginalChickenDisabled}
-                    onClick={this.increaseOriginalChicken}
+                    disabled={this.state.isIncreaseDrink1Disabled}
+                    onClick={this.increaseDrink1}
                     style={{ backgroundColor: "red" }}
                   >
                     +
@@ -279,7 +358,7 @@ class MenuItemDetailScreen extends Component {
 
                 <div className="col-4">
                   <div className="media" right >
-                    <img object className="itemSytle" src={require('../images/delivery_Pepsi(R).png')} style={{width:'100%'}} />
+                    <img object className="itemSytle" src={require('../images/delivery_Pepsi(R).png')} style={{width:'100%'}} alt="drink" />
                   </div>
                 </div>
               </div>
@@ -292,17 +371,17 @@ class MenuItemDetailScreen extends Component {
               <h4>Montain Dew</h4>
               <button
                 type="button" class="btn btn-primary"
-                disabled={this.state.isDecreaseSpicyChickenDisabled}
-                onClick={this.decreaseSpicyChicken}
+                disabled={this.state.isDecreaseDrink2Disabled}
+                onClick={this.decreaseDrink2}
                 style={{ backgroundColor: "red" }}
               >
                 -
               </button>
-              <span style={{ padding: 18 }}>{this.state.chicken_spicy}</span>
+              <span style={{ padding: 18 }}>{this.state.drink_2}</span>
               <button
                 type="button" class="btn btn-primary"
-                disabled={this.state.isIncreaseSpicyChickenDisabled}
-                onClick={this.increaseSpicyChicken}
+                disabled={this.state.isIncreaseDrink2Disabled}
+                onClick={this.increaseDrink2}
                 style={{ backgroundColor: "red" }}
               >
                 +
@@ -311,7 +390,7 @@ class MenuItemDetailScreen extends Component {
 
               <div className="col-4">
                   <div className="media" right >
-                    <img object className="itemSytle" src={require('../images/delivery_Pepsi(R).png')} style={{width:'100%'}} />
+                    <img object className="itemSytle" src={require('../images/delivery_Pepsi(R).png')} alt="pepsi" style={{width:'100%'}} />
                   </div>
                 </div>
               </div>
