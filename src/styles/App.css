@@ -70,7 +70,11 @@ img {
 }
 
 label {
-  margin-top:10px;
+  margin-top:8px;
   margin-bottom:0px;
   font-weight: 900;
+}
+
+.container {
+  padding-top:8px;
 }
