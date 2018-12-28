@@ -6,6 +6,7 @@
     "bootstrap": "^4.1.3",
     "lodash": "^4.17.11",
     "react": "^16.6.3",
+    "react-burger-menu": "^2.5.4",
     "react-dom": "^16.6.3",
     "react-image-autofit-frame": "^0.1.0",
     "react-perfect-image": "^0.0.4",
