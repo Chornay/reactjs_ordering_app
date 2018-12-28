@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Assistant:400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,600');
 
 body{
   background-color:rgb(243, 240, 226);
@@ -8,13 +8,19 @@ body{
 }
 
 h1{
-  margin-top: 18px;
-  font-size: 24px;
+  /* margin-top: 18px; */
+  /* margin-left: 16px; */
+  font-size: 30px;
+  font-family: 'Oswald';  
+  font-weight: 600;
 }
 
 h2{
-  margin-top: 18px;
-  font-size: 20px;
+  /* margin-top: 18px; */
+  /* margin-left: 16px; */
+  font-size: 22px;
+  font-family: 'Oswald'; 
+  font-weight: 500; 
 }
 
 /* .parent {
@@ -57,8 +63,14 @@ img {
 
 /* Pricing */
 
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 
 .big-price{
   font-family: 'Oswald';
+}
+
+label {
+  margin-top:10px;
+  margin-bottom:0px;
+  font-weight: 900;
 }

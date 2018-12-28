@@ -18,9 +18,13 @@ import NotificationMainScreen from './screens/NotificationsMainScreen';
 import MainNavigation from './components/MainNavigation';
 
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import OrderDetailsScreen from './screens/OrderDetailsScreen';
+import DeliveryCartScreen from './screens/DeliveryCartScreen';
 import CheckDeliveryCoverageScreen from './screens/CheckDeliveryCoverageScreen';
 import CheckoutScreen from './screens/CheckoutScreen';
+import DeliveryOptionScreen from './screens/DeliveryOptionsScreen';
+import DeliveryUserDetailsScreen from './screens/DeliveryUserDetailsScreen';
+import DeliveryPrepareForChangeScreen from './screens/DeliveryPrepareForChangeScreen';
+import CheckoutPaymentSuccessfulScreen from './screens/CheckoutPaymentSuccessfulScreen';
 
 const initialState = {
   counter: 0
@@ -78,8 +82,16 @@ class App extends Component {
           <Route path="/login" component={SignInScreen} />
           <Route path="/menu" component={MainLayout} />
 
-          <Route path="/delivery/cart" component={OrderDetailsScreen} />
+          <Route path="/delivery/cart" component={DeliveryCartScreen} />
 
+          <Route path="/delivery/user-detail" component={DeliveryUserDetailsScreen}/>
+
+          <Route path="/delivery/cash-change" component={DeliveryPrepareForChangeScreen}/>
+
+          <Route path="/delivery/order-success" component={CheckoutPaymentSuccessfulScreen}/>
+
+
+          <Route path="/delivery/order-option" component={DeliveryOptionScreen} />          
           <Route path="/delivery/check-location" component={CheckDeliveryCoverageScreen} />
 
           <Route path="/delivery/checkout" component={CheckoutScreen}/>

@@ -10,7 +10,7 @@ class MenuListScreen extends Component {
         <div className="container">
         <StartMyOrderButton />
 
-        <h3 style={{ textAlign: 'left', padding: 20 }}>Chicken Meals</h3>
+        <h2>CHICKEN MEALS</h2>
 
         
         <div className="row">
@@ -18,7 +18,7 @@ class MenuListScreen extends Component {
             <a href="/menu/item/2-pc-combo">
               <div className="card" >
                 <div className="card-body">
-                  <img top style={{ width: 150 }} src={require('../images/chicken_meal.jpeg')} />
+                  <img top style={{ width: 150 }} src={require('../images/chicken_meal.jpeg')} alt=""/>
                   2-PC COMBO
                </div>
               </div>

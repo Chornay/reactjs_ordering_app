@@ -13,7 +13,6 @@ import StartMyOrderButton from "../components/StartMyOrderButton";
 import AutoFitImage from 'react-image-autofit-frame';
 
 
-const allowedSrcWidths = [200, 300, 400, 500];
 
 class ForOneMenuScreen extends Component {
   constructor(props) {
@@ -51,7 +50,7 @@ class ForOneMenuScreen extends Component {
           </div>
 
           {/* Title */}
-          <h3 style={{ textAlign: "left", padding: 0, marginTop: 16 }}>MEALS FOR ONE</h3>
+          <h1 style={{ textAlign: "left", padding: 0, marginTop: 16 }}>MEALS FOR ONE</h1>
 
           {/* Contents */}
           <div className="row" style={{ padding: 8 }}>
@@ -66,9 +65,9 @@ class ForOneMenuScreen extends Component {
   renderMeals() {
     return this.state.data.map(meal => {
       return (
-        <div className="col-6 item-meal" style={{ padding: 3 }} key={meal.slug}>
+        <div className="col-6 item-meal" style={{ padding: 3}} key={meal.slug}>
           <Link to={"/menu/for-one/" + meal.slug}>
-            <div className="card">
+            <div className="card" style={{ borderWidth:0, borderRadius:0 }}>
               <div className="thumbnail" style={{height:200, overflow:'hidden'}}>
                 <img
                   className=""

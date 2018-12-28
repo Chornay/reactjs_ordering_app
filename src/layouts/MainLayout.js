@@ -61,12 +61,14 @@ class MainLayout extends Component {
                   paddingRight: 8
                 }}
               >
+                <a href='/delivery/cart' >
                 <span style={{ marginRight: 16 }}>
                   {this.props.counter}
                 </span>
                 <span style={{ textAlign: "right", fontWeight: "700" }}>
                   RM 10.00
                 </span>
+                </a>
               </div>
             </div>
           </div>
