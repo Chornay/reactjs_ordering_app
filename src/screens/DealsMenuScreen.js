@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AutoFitImage from 'react-image-autofit-frame';
+// import AutoFitImage from 'react-image-autofit-frame';
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
 import { connect } from 'react-redux';
@@ -47,7 +47,7 @@ class DealsMenuScreen extends Component {
         <div className="row" style={{ padding: 0 }}>
           <div className="col-12">
             <div className="card">
-              <img className="card-img" top style={{ height: '100%', maxHeight:400 }} src={deal_promotions} alt="Card cap" />
+              <img className="card-img" top style={{ height: '100%', maxHeight:'300px' }} src={deal_promotions} alt="Card cap" />
             </div>
           </div>
         </div>
@@ -67,23 +67,24 @@ class DealsMenuScreen extends Component {
 
       this.state.data.map((meal) => {
         return (
+          <div className="row-12">
           <div className="media" tag="li" style={{ marginBottom: 10, backgroundColor: 'white' }}>
           
-            <div className="media-body" style={{ padding: 8 }}>
-              <div heading className="dealHeading">
-                <h1 style={{ fontWeight: '900' }}>{meal.name}</h1>
-                <div style={{ marginTop:-10 }} />
-                <h2 style={{ fontWeight: '500' }}>RM{meal.price}</h2>
-              </div>
-              <p className="itemDescription">{meal.description}</p>
+          <div className="media-body" style={{ padding: 8 }}>
+            <div heading className="dealHeading">
+              <h1 style={{ fontWeight: '900' }}>{meal.name}</h1>
+              <div style={{ marginTop:-10 }} />
+              <h2 style={{ fontWeight: '500' }}>RM{meal.price}</h2>
             </div>
+            <p className="itemDescription">{meal.description}</p>
+          </div>
 
-            <div className="col-6">
+          <div className="col-6">
+              <img object className="itemSytle" src={meal.image} alt="Generic placeholder" style={{height:'280px',width:'190px',alignSelf: 'cover',padding:'0'}} />
+          </div>
 
-                <img object className="itemSytle" src={meal.image} alt="Generic placeholder" style={{height:'100%',width:'100%'}} />
 
-            </div>
-
+          </div>
           </div>
 
         )

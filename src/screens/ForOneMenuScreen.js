@@ -10,7 +10,7 @@ import side_snack from "../images/side_snack.jpg";
 import desert from "../images/desert.jpg";
 import drink from "../images/drink.jpeg";
 import StartMyOrderButton from "../components/StartMyOrderButton";
-import AutoFitImage from 'react-image-autofit-frame';
+// import AutoFitImage from 'react-image-autofit-frame';
 
 
 
