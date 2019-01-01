@@ -11,8 +11,6 @@ import MenuListScreen from "../screens/MenuListScreen";
 import MenuItemDetailScreen from "../screens/MenuItemDetailScreen";
 import MainNavigation from "../components/MainNavigation";
 
-
-
 class MainLayout extends Component {
   render() {
     return (
@@ -29,7 +27,6 @@ class MainLayout extends Component {
                 paddingBottom: 8
               }}
             >
-              
               {/* {this.props.location.pathname} */}
               
               <div >
