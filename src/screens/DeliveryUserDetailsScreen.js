@@ -22,7 +22,6 @@ class DeliveryUserDetailsScreen extends Component {
                 <label>Delivery to</label>
                 <input className="form-control" />
 
-
               </form>
 
               <div style={{height:20}}/>

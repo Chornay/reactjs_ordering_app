@@ -183,7 +183,6 @@ class MenuItemDetailScreen extends Component {
     this.updateDisablingButton();
   };
 
-
   render() {
     return (
       <div className="container">

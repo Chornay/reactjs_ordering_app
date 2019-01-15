@@ -12,8 +12,6 @@ import drink from "../images/drink.jpeg";
 import StartMyOrderButton from "../components/StartMyOrderButton";
 // import AutoFitImage from 'react-image-autofit-frame';
 
-
-
 class ForOneMenuScreen extends Component {
   constructor(props) {
     super(props);
