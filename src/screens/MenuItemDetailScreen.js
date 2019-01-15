@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-import chicken_meal from "../images/chicken_meal.jpeg";
+import chicken_meal from "../images/chicken_meal.png";
 
 import FluidButton from "../components/FluidButton";
 

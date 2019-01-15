@@ -18,8 +18,8 @@ class MenuListScreen extends Component {
             <a href="/menu/item/2-pc-combo">
               <div className="card" >
                 <div className="card-body">
-                  <img top style={{ width: 150 }} src={require('../images/chicken_meal.jpeg')} alt=""/>
                   2-PC COMBO
+                  <img top style={{ width: 150, alignItems:"left", }} src={require('../images/deal_spicy_gochujang_a.png')} alt=""/>
                </div>
               </div>
               </a>

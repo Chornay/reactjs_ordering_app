@@ -96,7 +96,7 @@ class App extends Component {
            
           <Route path="/notifications" component={NotificationMainScreen} />        
           <Redirect from="/" exact to="/menu/for-one" />
-          {/* <Route path="/" component={MenuItemDetailScreen} /> */}
+          <Route path="/" component={MenuItemDetailScreen} />
           <Route component={NoMatchScreen}/>
         </Switch>
         
