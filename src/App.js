@@ -18,6 +18,8 @@ import NotificationMainScreen from './screens/NotificationsMainScreen';
 import MainNavigation from './components/MainNavigation';
 
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import Sidebar from './components/Sidebar'
+
 import DeliveryCartScreen from './screens/DeliveryCartScreen';
 import CheckDeliveryCoverageScreen from './screens/CheckDeliveryCoverageScreen';
 import CheckoutScreen from './screens/CheckoutScreen';
@@ -76,7 +78,9 @@ class App extends Component {
     return (
       <Provider store={store}>
       <BrowserRouter>
-      <div>
+      <div id="page-wrap">
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+
         <MainNavigation toggle={()=>{this.toggle()}} />      
         <Switch> 
           <Route path="/login" component={SignInScreen} />
