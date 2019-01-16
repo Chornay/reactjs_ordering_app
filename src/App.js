@@ -8,12 +8,12 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web and AsyncStorage for react-native
 
 import * as types from './redux/types'
+import './styles/App.css'
 
 import MainLayout from './layouts/MainLayout'
 import MenuItemDetailScreen from './screens/MenuItemDetailScreen'
 import SignInScreen from './screens/SignInScreen'
 import NoMatchScreen from './screens/NoMatchScreen'
-import './styles/App.css'
 import NotificationMainScreen from './screens/NotificationsMainScreen';
 import MainNavigation from './components/MainNavigation';
 
@@ -77,7 +77,7 @@ class App extends Component {
       <Provider store={store}>
       <BrowserRouter>
       <div id="page-wrap">
-      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+      {/* <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} /> */}
 
         <MainNavigation toggle={()=>{this.toggle()}} />      
         <Switch> 
