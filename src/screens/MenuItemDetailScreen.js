@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-import chicken_meal from "../images/chicken_meal.jpeg";
+import chicken_meal from "../images/chicken_meal.png";
 
 import FluidButton from "../components/FluidButton";
 
@@ -182,7 +182,6 @@ class MenuItemDetailScreen extends Component {
     this.state.drink_1 = this.state.drink_1 + 1;
     this.updateDisablingButton();
   };
-
 
   render() {
     return (

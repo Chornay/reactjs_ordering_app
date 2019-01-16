@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import deal_promotions from '../images/deal_promotions.png'
 import kfc_promotion from '../images/kfc_promotion.jpg'
-import side_snack from '../images/side_snack.jpg'
-import family_meals from '../images/family_meals.jpeg'
-import desert from '../images/desert.jpg'
-import drink from '../images/drink.jpeg'
+import side_meal from '../images/side_meal.png'
+import sub_mega_variety from '../images/sub_mega_variety.png'
+import desert from '../images/desert.png'
+import drink from '../images/drink.png'
 
 import StartMyOrderButton from '../components/StartMyOrderButton';
 
@@ -14,8 +15,8 @@ class ShaerMenuScreen extends Component {
     super(props);
     this.state = {
       data: [
-        { name: 'Family meals', slug: 'familyMeals', image: family_meals },
-        { name: 'Sides and Snacks', slug: 'sides', image: side_snack },
+        { name: 'Family meals', slug: 'familyMeals', image: sub_mega_variety },
+        { name: 'Sides and Snacks', slug: 'sides', image: side_meal },
         { name: 'Deserts', slug: 'deserts', image: desert },
         { name: 'Drinks', slug: 'drinks', image: drink },
       ]
@@ -32,7 +33,7 @@ class ShaerMenuScreen extends Component {
           <div className="row" style={{ padding: 0 }}>
             <div className="col">
               <div className="card">
-                <img style={{ width: '100%', maxHeight: 300 }} src={kfc_promotion} alt="Card cap" />
+                <img style={{ width: '100%', maxHeight: 300 }} src={deal_promotions} alt="Card cap" />
               </div>
             </div>
           </div>

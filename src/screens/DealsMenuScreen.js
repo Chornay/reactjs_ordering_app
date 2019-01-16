@@ -8,12 +8,14 @@ import '../styles/DealScreen.css'
 
 import deal_promotions from '../images/deal_promotions.png'
 import deal_spicy_gochujang_3pc from '../images/deal_spicy_gochujang_3pc.png'
+import spicy_gochujang_a from '../images/spicy_gochujang_a.png'
 import deal_spicy_gochujang_sauce from '../images/deal_spicy_gochujang_sauce.png'
 import deal_spicy_prawn from '../images/deal_spicy_prawn.png'
 import deal_zwb_combo_delivery from '../images/deal_zwb_combo_delivery.png'
 import deal_zwb_megabox_delivery from '../images/deal_zwb_megabox_delivery.png'
 import deal_zwb_alacarte_delivery from '../images/deal_zwb_alacarte_delivery.png'
 import deal_mega_variety_box from '../images/deal_mega_variety_box.png'
+import zwb_alacarte_delivery from '../images/zwb_alacarte_delivery.png'
 import deal_pudding_mango from '../images/deal_pudding_mango.png'
 import deal_pudding_gulamelaka from '../images/deal_pudding_gulamelaka.png'
 import deal_pudding_caramel from '../images/deal_pudding_caramel.png'
@@ -24,12 +26,13 @@ class DealsMenuScreen extends Component {
     super(props);
     this.state = {
       data: [
-        { name: 'Spicy Honey Gocujang Sauce', price: 2.45, description: '2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos', image: require('../images/deal_spicy_gochujang_3pc.png') },
+        { name: 'Spicy Honey Gocujang Sauce', price: 2.45, description: '2 pieces of chicken, Spicy and Honey Gochujang sauce, coleslaw, whipped potatos', image:spicy_gochujang_a },
         { name: 'Spicy Gochujang Crunch 3-pc Combo', price: 23.20, description: '3 pieces of chicken, Spicy Honey Gochujang sauce, coleslaw, whipped potato, drink., coleslaw, whipped potatos', image: deal_spicy_gochujang_3pc },
-        { name: 'spicy Honey Gochujang Sauce', price: 2.45, description: '', image: deal_spicy_gochujang_3pc },
+        { name: 'spicy Honey Gochujang Sauce', price: 2.45, description: '', image: deal_spicy_gochujang_sauce },
         { name: '5-pc Hot & Spicy Prawns', price: 11.55, description: '', image: deal_spicy_prawn },
         { name: 'Zinger Waffle Burger Combo', price: 19.60, description: 'Zinger Waffle Burger, potato wedges, drink.', image: deal_zwb_combo_delivery },
         { name: 'Zinger Waffle Burger Mega Box', price: 24.25, description: '1 piece of chicken, Zinger Waffle Burger, potato wedges, drink.', image: deal_zwb_megabox_delivery },
+        { name: 'Zinger Waffle Burger', price: 15.30, description: '1 piece of chicken, Zinger Waffle Burger, potato wedges, drink.', image:zwb_alacarte_delivery},
         { name: 'Mega Variety Box', price: 57.90, description: '6 pieces of chicken, 12 pieces of nuggets, potato wedges, dip, whipped potato, drink.', image: deal_mega_variety_box },
         { name: 'Mango Peach Vanilla Pudding', price: 1.90, description: '', image: deal_pudding_mango },
         { name: 'Gula Melaka Vanilla Pudding', price: 1.90, description: '', image: deal_pudding_gulamelaka },
@@ -68,22 +71,21 @@ class DealsMenuScreen extends Component {
       this.state.data.map((meal) => {
         return (
           <div className="row-12">
-          <div className="media" tag="li" style={{ marginBottom: 10, backgroundColor: 'white' }}>
+            <div className="media" tag="li" style={{ marginBottom: 10, backgroundColor: 'white', padding:'8px'}}>
           
-          <div className="media-body" style={{ padding: 8 }}>
-            <div heading className="dealHeading">
-              <h1 style={{ fontWeight: '900' }}>{meal.name}</h1>
+              <div className="media-body" style={{ padding:'0px' }}>
+              <div heading className="dealHeading">
+                <h1 style={{ fontWeight: '100', fontSize:'20px', marginBottom:'12px' }}>{meal.name}</h1>
+              <div/>
               <div style={{ marginTop:-10 }} />
-              <h2 style={{ fontWeight: '500' }}>RM{meal.price}</h2>
+               <h2 style={{ fontWeight: '100', fontSize:'15px' }}>RM{meal.price}</h2>
+              </div>
+              <p className="itemDescription">{meal.description}</p>
             </div>
-            <p className="itemDescription">{meal.description}</p>
-          </div>
 
-          <div className="col-6">
-              <img object className="itemSytle" src={meal.image} alt="Generic placeholder" style={{height:'280px',width:'190px',alignSelf: 'cover',padding:'0'}} />
-          </div>
-
-
+            <div className="col-6" style={{marginRight:'0px'}}>
+            <img object src={meal.image} alt="Generic placeholder" style={{height:'280px',width:'190px',alignSelf: 'cover',padding:'0'}} />
+            </div>
           </div>
           </div>
 

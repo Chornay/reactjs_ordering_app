@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 import kfc_promotion from "../images/kfc_promotion.jpg";
-import chicken_meal from "../images/chicken_meal.jpeg";
-import buger_meals from "../images/buger_meals.jpg";
-import side_snack from "../images/side_snack.jpg";
-import desert from "../images/desert.jpg";
-import drink from "../images/drink.jpeg";
+import chicken_meal from "../images/chicken_meal.png";
+import buger_meals from "../images/buger_meals.png";
+import side_meal from "../images/side_meal.png";
+import desert from "../images/desert.png";
+import drink from "../images/drink.png";
 import StartMyOrderButton from "../components/StartMyOrderButton";
 // import AutoFitImage from 'react-image-autofit-frame';
-
-
 
 class ForOneMenuScreen extends Component {
   constructor(props) {
@@ -22,7 +20,7 @@ class ForOneMenuScreen extends Component {
       data: [
         { name: "Chicken Meals", slug: "chicken", image: chicken_meal },
         { name: "Burgers", slug: "burgers", image: buger_meals },
-        { name: "Sides and Snacks", slug: "sides", image: side_snack },
+        { name: "Sides and Snacks", slug: "sides", image: side_meal },
         { name: "Deserts", slug: "deserts", image: desert },
         { name: "Drinks", slug: "drinks", image: drink }
       ]
@@ -41,7 +39,7 @@ class ForOneMenuScreen extends Component {
               <img
                 onClick={()=>{this.props.increaseCounter()}}
                 style={{ width: '100%' }}
-                src={require('../images/spicy-gochujang-sst.jpg')}
+                src={require('../images/spicy_gochujang_sauce.png')}
                 alt="Hojang"
               />
 

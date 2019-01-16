@@ -55,8 +55,6 @@ const persistedReducer = persistReducer(persistConfig, reducer)
 
 const store = createStore(persistedReducer);
 
-
-
 class App extends Component {
 
   constructor(props) {
@@ -94,7 +92,6 @@ class App extends Component {
 
           <Route path="/delivery/order-success" component={CheckoutPaymentSuccessfulScreen}/>
 
-
           <Route path="/delivery/order-option" component={DeliveryOptionScreen} />          
           <Route path="/delivery/check-location" component={CheckDeliveryCoverageScreen} />
 
@@ -103,7 +100,7 @@ class App extends Component {
            
           <Route path="/notifications" component={NotificationMainScreen} />        
           <Redirect from="/" exact to="/menu/for-one" />
-          {/* <Route path="/" component={MenuItemDetailScreen} /> */}
+          <Route path="/" component={MenuItemDetailScreen} />
           <Route component={NoMatchScreen}/>
         </Switch>
         
